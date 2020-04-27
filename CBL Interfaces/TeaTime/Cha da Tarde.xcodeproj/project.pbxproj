@@ -1,0 +1,369 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7733D7CB244F7506003E8019 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7733D7CA244F7506003E8019 /* AppDelegate.swift */; };
+		7733D7CD244F7506003E8019 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7733D7CC244F7506003E8019 /* SceneDelegate.swift */; };
+		7733D7D4244F7509003E8019 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7733D7D3244F7509003E8019 /* Assets.xcassets */; };
+		7733D7D7244F7509003E8019 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7733D7D5244F7509003E8019 /* LaunchScreen.storyboard */; };
+		7733D7E2244F76F5003E8019 /* TeaTabController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7733D7E1244F76F5003E8019 /* TeaTabController.storyboard */; };
+		7733D7E4244F85D6003E8019 /* TimerTea.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7733D7E3244F85D6003E8019 /* TimerTea.storyboard */; };
+		7733D7E6244F85E5003E8019 /* TypesTea.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7733D7E5244F85E5003E8019 /* TypesTea.storyboard */; };
+		7733D7E8244F9756003E8019 /* TimerTeaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7733D7E7244F9756003E8019 /* TimerTeaViewController.swift */; };
+		7733D7EA244F9798003E8019 /* TypesTeaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7733D7E9244F9798003E8019 /* TypesTeaViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		7733D7C7244F7506003E8019 /* Cha da Tarde.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cha da Tarde.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7733D7CA244F7506003E8019 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		7733D7CC244F7506003E8019 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		7733D7D3244F7509003E8019 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7733D7D6244F7509003E8019 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		7733D7D8244F7509003E8019 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7733D7E1244F76F5003E8019 /* TeaTabController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TeaTabController.storyboard; sourceTree = "<group>"; };
+		7733D7E3244F85D6003E8019 /* TimerTea.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TimerTea.storyboard; sourceTree = "<group>"; };
+		7733D7E5244F85E5003E8019 /* TypesTea.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TypesTea.storyboard; sourceTree = "<group>"; };
+		7733D7E7244F9756003E8019 /* TimerTeaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerTeaViewController.swift; sourceTree = "<group>"; };
+		7733D7E9244F9798003E8019 /* TypesTeaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypesTeaViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7733D7C4244F7506003E8019 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7733D7BE244F7506003E8019 = {
+			isa = PBXGroup;
+			children = (
+				7733D7C9244F7506003E8019 /* Cha da Tarde */,
+				7733D7C8244F7506003E8019 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		7733D7C8244F7506003E8019 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7733D7C7244F7506003E8019 /* Cha da Tarde.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7733D7C9244F7506003E8019 /* Cha da Tarde */ = {
+			isa = PBXGroup;
+			children = (
+				7733D7E0244F76D7003E8019 /* Model */,
+				7733D7DF244F767A003E8019 /* Controller */,
+				7733D7DE244F7670003E8019 /* View */,
+				7733D7CA244F7506003E8019 /* AppDelegate.swift */,
+				7733D7CC244F7506003E8019 /* SceneDelegate.swift */,
+				7733D7D3244F7509003E8019 /* Assets.xcassets */,
+				7733D7D5244F7509003E8019 /* LaunchScreen.storyboard */,
+				7733D7D8244F7509003E8019 /* Info.plist */,
+			);
+			path = "Cha da Tarde";
+			sourceTree = "<group>";
+		};
+		7733D7DE244F7670003E8019 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7733D7E1244F76F5003E8019 /* TeaTabController.storyboard */,
+				7733D7E3244F85D6003E8019 /* TimerTea.storyboard */,
+				7733D7E5244F85E5003E8019 /* TypesTea.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		7733D7DF244F767A003E8019 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				7733D7E7244F9756003E8019 /* TimerTeaViewController.swift */,
+				7733D7E9244F9798003E8019 /* TypesTeaViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		7733D7E0244F76D7003E8019 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7733D7C6244F7506003E8019 /* Cha da Tarde */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7733D7DB244F7509003E8019 /* Build configuration list for PBXNativeTarget "Cha da Tarde" */;
+			buildPhases = (
+				7733D7C3244F7506003E8019 /* Sources */,
+				7733D7C4244F7506003E8019 /* Frameworks */,
+				7733D7C5244F7506003E8019 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Cha da Tarde";
+			productName = "Cha da Tarde";
+			productReference = 7733D7C7244F7506003E8019 /* Cha da Tarde.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7733D7BF244F7506003E8019 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1130;
+				LastUpgradeCheck = 1130;
+				ORGANIZATIONNAME = "Ronaldo Gomes";
+				TargetAttributes = {
+					7733D7C6244F7506003E8019 = {
+						CreatedOnToolsVersion = 11.3.1;
+					};
+				};
+			};
+			buildConfigurationList = 7733D7C2244F7506003E8019 /* Build configuration list for PBXProject "Cha da Tarde" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 7733D7BE244F7506003E8019;
+			productRefGroup = 7733D7C8244F7506003E8019 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7733D7C6244F7506003E8019 /* Cha da Tarde */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7733D7C5244F7506003E8019 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7733D7E6244F85E5003E8019 /* TypesTea.storyboard in Resources */,
+				7733D7E2244F76F5003E8019 /* TeaTabController.storyboard in Resources */,
+				7733D7E4244F85D6003E8019 /* TimerTea.storyboard in Resources */,
+				7733D7D7244F7509003E8019 /* LaunchScreen.storyboard in Resources */,
+				7733D7D4244F7509003E8019 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7733D7C3244F7506003E8019 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7733D7CB244F7506003E8019 /* AppDelegate.swift in Sources */,
+				7733D7EA244F9798003E8019 /* TypesTeaViewController.swift in Sources */,
+				7733D7E8244F9756003E8019 /* TimerTeaViewController.swift in Sources */,
+				7733D7CD244F7506003E8019 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		7733D7D5244F7509003E8019 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7733D7D6244F7509003E8019 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		7733D7D9244F7509003E8019 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		7733D7DA244F7509003E8019 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7733D7DC244F7509003E8019 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Cha da Tarde/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "mai.Cha-da-Tarde";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		7733D7DD244F7509003E8019 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Cha da Tarde/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "mai.Cha-da-Tarde";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7733D7C2244F7506003E8019 /* Build configuration list for PBXProject "Cha da Tarde" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7733D7D9244F7509003E8019 /* Debug */,
+				7733D7DA244F7509003E8019 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7733D7DB244F7509003E8019 /* Build configuration list for PBXNativeTarget "Cha da Tarde" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7733D7DC244F7509003E8019 /* Debug */,
+				7733D7DD244F7509003E8019 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7733D7BF244F7506003E8019 /* Project object */;
+}
