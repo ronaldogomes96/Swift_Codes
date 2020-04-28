@@ -9,22 +9,40 @@
 import UIKit
 
 class TypesTeaViewController: UIViewController {
+    
+    /*
+       Testes das funcoes de UIViewController
+    */
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        //So aparece uma vez a cada carregamento da tela
+        print("View Did Load")
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        //Aparece antes de cada exibicao da tela
+        print("View will appear")
     }
-    */
+    
+    override func viewDidAppear(_ animated: Bool) {
+        
+        //Aparece depois que a funcao apareceu na tela
+        print("View did appear")
+    }
 
+    override func viewWillDisappear(_ animated: Bool) {
+        
+        //Aparece antes da nova tela aparecer, porem depois dela ser carregada
+        print("view will disappear")
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        
+        //Aparece depois que ela desaparece
+        print("view will disappear")
+    }
 }
