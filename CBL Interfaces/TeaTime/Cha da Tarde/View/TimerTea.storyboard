@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Wef-al-g7y">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Wef-al-g7y">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -40,9 +40,10 @@
                                 <rect key="frame" x="262" y="539" width="64" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.94661478840000002" blue="0.23374842900000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Reset"/>
+                                <state key="normal" title="MODAL"/>
                                 <connections>
-                                    <action selector="resetButtonTapped:" destination="Wef-al-g7y" eventType="touchUpInside" id="UNt-gt-98g"/>
+                                    <action selector="modalButton:" destination="Wef-al-g7y" eventType="touchUpInside" id="IaE-fg-AFE"/>
+                                    <segue destination="z8b-XV-OKl" kind="presentation" identifier="modalPost" id="tvA-gi-v7R"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KhI-fc-aTR">
@@ -61,8 +62,8 @@
                     <tabBarItem key="tabBarItem" title="Timer" image="cube.fill" catalog="system" id="gtc-w7-qt6" customClass="Timer"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="modalButton" destination="PiU-Pi-gKI" id="KbR-pg-mtm"/>
                         <outlet property="pauseButton" destination="KhI-fc-aTR" id="98I-xK-Ndg"/>
-                        <outlet property="resetButton" destination="PiU-Pi-gKI" id="wZH-us-Nt1"/>
                         <outlet property="starButton" destination="IUh-oK-1gg" id="yDv-Mc-f2e"/>
                         <outlet property="timerLabel" destination="rCQ-2L-CmL" id="3bc-Ze-R9q"/>
                     </connections>
@@ -71,9 +72,17 @@
             </objects>
             <point key="canvasLocation" x="53.623188405797109" y="109.82142857142857"/>
         </scene>
+        <!--ModalPosts-->
+        <scene sceneID="6Ew-gu-Nx6">
+            <objects>
+                <viewControllerPlaceholder storyboardName="ModalPosts" id="z8b-XV-OKl" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gXd-f9-iNX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="777" y="84"/>
+        </scene>
     </scenes>
     <resources>
-        <image name="briefcase" catalog="system" width="64" height="50"/>
-        <image name="cube.fill" catalog="system" width="64" height="62"/>
+        <image name="briefcase" catalog="system" width="128" height="102"/>
+        <image name="cube.fill" catalog="system" width="128" height="124"/>
     </resources>
 </document>

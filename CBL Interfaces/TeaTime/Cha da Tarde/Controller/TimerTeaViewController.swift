@@ -14,9 +14,9 @@ class TimerTeaViewController: UIViewController {
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var starButton: UIButton!
     @IBOutlet weak var pauseButton: UIButton!
-    @IBOutlet weak var resetButton: UIButton!
+    @IBOutlet weak var modalButton: UIButton!
     
-    var seconds = 60
+    var seconds = 0
     var timer = Timer()
     var isTimerRunning = false
     
@@ -78,9 +78,11 @@ class TimerTeaViewController: UIViewController {
     }
     
     
-    @IBAction func resetButtonTapped(_ sender: UIButton) {
-    }
     
+    @IBAction func modalButton(_ sender: UIButton) {
+        
+        self.performSegue(withIdentifier: "modalPost", sender: nil)
+    }
     
     
 }

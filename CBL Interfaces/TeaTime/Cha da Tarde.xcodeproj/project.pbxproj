@@ -10,12 +10,13 @@
 		7733D7CB244F7506003E8019 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7733D7CA244F7506003E8019 /* AppDelegate.swift */; };
 		7733D7CD244F7506003E8019 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7733D7CC244F7506003E8019 /* SceneDelegate.swift */; };
 		7733D7D4244F7509003E8019 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7733D7D3244F7509003E8019 /* Assets.xcassets */; };
-		7733D7D7244F7509003E8019 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7733D7D5244F7509003E8019 /* LaunchScreen.storyboard */; };
 		7733D7E2244F76F5003E8019 /* TeaTabController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7733D7E1244F76F5003E8019 /* TeaTabController.storyboard */; };
 		7733D7E4244F85D6003E8019 /* TimerTea.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7733D7E3244F85D6003E8019 /* TimerTea.storyboard */; };
 		7733D7E6244F85E5003E8019 /* TypesTea.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7733D7E5244F85E5003E8019 /* TypesTea.storyboard */; };
 		7733D7E8244F9756003E8019 /* TimerTeaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7733D7E7244F9756003E8019 /* TimerTeaViewController.swift */; };
 		7733D7EA244F9798003E8019 /* TypesTeaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7733D7E9244F9798003E8019 /* TypesTeaViewController.swift */; };
+		77F19E9C24585C3D0080B4C2 /* ModalPosts.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77F19E9B24585C3D0080B4C2 /* ModalPosts.storyboard */; };
+		77F19E9E24585C650080B4C2 /* ModalPostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F19E9D24585C650080B4C2 /* ModalPostsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,13 +24,14 @@
 		7733D7CA244F7506003E8019 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7733D7CC244F7506003E8019 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		7733D7D3244F7509003E8019 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		7733D7D6244F7509003E8019 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7733D7D8244F7509003E8019 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7733D7E1244F76F5003E8019 /* TeaTabController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TeaTabController.storyboard; sourceTree = "<group>"; };
 		7733D7E3244F85D6003E8019 /* TimerTea.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TimerTea.storyboard; sourceTree = "<group>"; };
 		7733D7E5244F85E5003E8019 /* TypesTea.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TypesTea.storyboard; sourceTree = "<group>"; };
 		7733D7E7244F9756003E8019 /* TimerTeaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerTeaViewController.swift; sourceTree = "<group>"; };
 		7733D7E9244F9798003E8019 /* TypesTeaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypesTeaViewController.swift; sourceTree = "<group>"; };
+		77F19E9B24585C3D0080B4C2 /* ModalPosts.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ModalPosts.storyboard; sourceTree = "<group>"; };
+		77F19E9D24585C650080B4C2 /* ModalPostsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalPostsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,7 +70,6 @@
 				7733D7CA244F7506003E8019 /* AppDelegate.swift */,
 				7733D7CC244F7506003E8019 /* SceneDelegate.swift */,
 				7733D7D3244F7509003E8019 /* Assets.xcassets */,
-				7733D7D5244F7509003E8019 /* LaunchScreen.storyboard */,
 				7733D7D8244F7509003E8019 /* Info.plist */,
 			);
 			path = "Cha da Tarde";
@@ -80,6 +81,7 @@
 				7733D7E1244F76F5003E8019 /* TeaTabController.storyboard */,
 				7733D7E3244F85D6003E8019 /* TimerTea.storyboard */,
 				7733D7E5244F85E5003E8019 /* TypesTea.storyboard */,
+				77F19E9B24585C3D0080B4C2 /* ModalPosts.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -89,6 +91,7 @@
 			children = (
 				7733D7E7244F9756003E8019 /* TimerTeaViewController.swift */,
 				7733D7E9244F9798003E8019 /* TypesTeaViewController.swift */,
+				77F19E9D24585C650080B4C2 /* ModalPostsViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -158,10 +161,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				77F19E9C24585C3D0080B4C2 /* ModalPosts.storyboard in Resources */,
 				7733D7E6244F85E5003E8019 /* TypesTea.storyboard in Resources */,
 				7733D7E2244F76F5003E8019 /* TeaTabController.storyboard in Resources */,
 				7733D7E4244F85D6003E8019 /* TimerTea.storyboard in Resources */,
-				7733D7D7244F7509003E8019 /* LaunchScreen.storyboard in Resources */,
 				7733D7D4244F7509003E8019 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -175,23 +178,13 @@
 			files = (
 				7733D7CB244F7506003E8019 /* AppDelegate.swift in Sources */,
 				7733D7EA244F9798003E8019 /* TypesTeaViewController.swift in Sources */,
+				77F19E9E24585C650080B4C2 /* ModalPostsViewController.swift in Sources */,
 				7733D7E8244F9756003E8019 /* TimerTeaViewController.swift in Sources */,
 				7733D7CD244F7506003E8019 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		7733D7D5244F7509003E8019 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				7733D7D6244F7509003E8019 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		7733D7D9244F7509003E8019 /* Debug */ = {
