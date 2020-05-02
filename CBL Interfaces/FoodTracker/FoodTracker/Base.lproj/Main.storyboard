@@ -16,7 +16,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="sx8-Cs-h43">
-                                <rect key="frame" x="10" y="19.999999999999993" width="394" height="100.33333333333331"/>
+                                <rect key="frame" x="10" y="19.999999999999972" width="394" height="502.33333333333326"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meal Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fhL-Iz-k8J">
                                         <rect key="frame" x="0.0" y="0.0" width="86.333333333333329" height="20.333333333333332"/>
@@ -32,7 +32,16 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pqT-XM-4tc">
                                         <rect key="frame" x="0.0" y="70.333333333333329" width="155" height="30"/>
                                         <state key="normal" title="Set Default Label Text."/>
+                                        <connections>
+                                            <action selector="setDefaultLabelText:" destination="BYZ-38-t0r" eventType="touchUpInside" id="srA-5b-WBH"/>
+                                        </connections>
                                     </button>
+                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default Images" translatesAutoresizingMaskIntoConstraints="NO" id="8wU-Ch-vgY">
+                                        <rect key="frame" x="0.0" y="108.33333333333337" width="394" height="394"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="8wU-Ch-vgY" secondAttribute="height" multiplier="1:1" id="wnD-NN-6r2"/>
+                                        </constraints>
+                                    </imageView>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="WHz-Uf-7mx" secondAttribute="trailing" id="SON-YP-y5f"/>
@@ -47,10 +56,17 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="mealNameLabel" destination="fhL-Iz-k8J" id="oEM-8Q-k8G"/>
+                        <outlet property="nameTextField" destination="WHz-Uf-7mx" id="43t-27-2jA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="109.23913043478262"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="default Images" width="960" height="600"/>
+    </resources>
 </document>
