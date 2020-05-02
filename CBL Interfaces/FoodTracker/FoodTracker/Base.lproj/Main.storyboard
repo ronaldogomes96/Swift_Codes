@@ -38,11 +38,16 @@
                                     </button>
                                     <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default Images" translatesAutoresizingMaskIntoConstraints="NO" id="8wU-Ch-vgY">
                                         <rect key="frame" x="0.0" y="108.33333333333337" width="394" height="394"/>
+                                        <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="8wU-Ch-vgY" secondAttribute="height" multiplier="1:1" id="wnD-NN-6r2"/>
                                         </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="TSH-zI-oGh" appends="YES" id="nQb-jv-fdG"/>
+                                        </connections>
                                     </imageView>
                                 </subviews>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="WHz-Uf-7mx" secondAttribute="trailing" id="SON-YP-y5f"/>
                                 </constraints>
@@ -59,9 +64,15 @@
                     <connections>
                         <outlet property="mealNameLabel" destination="fhL-Iz-k8J" id="oEM-8Q-k8G"/>
                         <outlet property="nameTextField" destination="WHz-Uf-7mx" id="43t-27-2jA"/>
+                        <outlet property="photoImageView" destination="8wU-Ch-vgY" id="YVB-xK-rF7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="TSH-zI-oGh">
+                    <connections>
+                        <action selector="selectImageFromPhotoLibrary:" destination="BYZ-38-t0r" id="r2r-49-Wi3"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="109.23913043478262"/>
         </scene>
