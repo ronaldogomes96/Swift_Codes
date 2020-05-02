@@ -14,6 +14,7 @@
 		772C8C53245CB747003D1243 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 772C8C52245CB747003D1243 /* Assets.xcassets */; };
 		772C8C56245CB747003D1243 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 772C8C54245CB747003D1243 /* LaunchScreen.storyboard */; };
 		772C8C61245CB747003D1243 /* FoodTrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772C8C60245CB747003D1243 /* FoodTrackerTests.swift */; };
+		778547DB245DE1D60098D69F /* RatingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778547DA245DE1D60098D69F /* RatingControl.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		772C8C5C245CB747003D1243 /* FoodTrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FoodTrackerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		772C8C60245CB747003D1243 /* FoodTrackerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodTrackerTests.swift; sourceTree = "<group>"; };
 		772C8C62245CB747003D1243 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		778547DA245DE1D60098D69F /* RatingControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingControl.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 				772C8C52245CB747003D1243 /* Assets.xcassets */,
 				772C8C54245CB747003D1243 /* LaunchScreen.storyboard */,
 				772C8C57245CB747003D1243 /* Info.plist */,
+				778547DA245DE1D60098D69F /* RatingControl.swift */,
 			);
 			path = FoodTracker;
 			sourceTree = "<group>";
@@ -200,6 +203,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				778547DB245DE1D60098D69F /* RatingControl.swift in Sources */,
 				772C8C4E245CB745003D1243 /* ViewController.swift in Sources */,
 				772C8C4A245CB745003D1243 /* AppDelegate.swift in Sources */,
 				772C8C4C245CB745003D1243 /* SceneDelegate.swift in Sources */,
