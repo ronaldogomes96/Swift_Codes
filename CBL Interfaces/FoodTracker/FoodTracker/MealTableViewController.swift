@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import os.log
 
 class MealTableViewController: UITableViewController {
     
@@ -18,8 +19,53 @@ class MealTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //Cria o botao de edicao fornecido pelo sistema
+        navigationItem.leftBarButtonItem = editButtonItem
+        
         //Carrega os dados gerais da refeicao
         loadSampleMeals()
+    }
+    
+    //MARK: Navigation
+    
+    //Verifica qual o caminho de escolha
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
+        
+        switch (segue.identifier ?? "") {
+        
+        //Caso for esse caminho, nao é necessario alterar a aparencia da cena de detalhes
+        case "AddItem":
+            os_log("Adding a new meal.", log: OSLog.default, type: .debug)
+        
+        //Caso seja esse o caminho, é necessario alguns ajustes
+        case "ShowDetail":
+            
+            //Obtem o viewcontroller de destino
+            guard let mealDetailViewController = segue.destination as? MealViewController else{
+                    fatalError("Unexpected destination: \(segue.destination)")
+            }
+            
+            //Obtem a celula selecionada
+            guard let selectedMealCell = sender as? MealTableViewCell else {
+                fatalError("Unexpected sender: \(String(describing: sender))")
+            }
+            
+            //Obtem o caminho do indice da celula selecionadax
+            guard let indexPath = tableView.indexPath(for: selectedMealCell) else{
+                fatalError("The selected cell is not being displayed by the table")
+            }
+            
+            //Procura esse caminho no array de objetos de meals
+            let selectedMeal = meals[indexPath.row]
+            
+            //Exibicao de destino
+            mealDetailViewController.meal = selectedMeal
+        
+        //Caso padrao
+        default:
+            fatalError("Unexpected Segue Identifier; \(String(describing: segue.identifier))")
+        }
     }
     
     //MARK: Actions
@@ -29,14 +75,29 @@ class MealTableViewController: UITableViewController {
         
         if let sourceViewController = sender.source as? MealViewController, let meal = sourceViewController.meal{
             
-            //Verifica o local em que a nova refeicao sera colocada
-            let newIndexPath = IndexPath(row: meals.count, section: 0)
+            //Verifica se uma linha na visualização da tabela está selecionada, e é executada quando esta editando uma refeicao existente
+            if let selectedIndexPath = tableView.indexPathForSelectedRow{
+                
+                //Atualizando uma refeicao existente
+                
+                //Substitui o antigo objeto pelo novo editado
+                meals[selectedIndexPath.row] = meal
+                //Substitui na celula correspondente
+                tableView.reloadRows(at: [selectedIndexPath], with: .none)
+            }
+            //Caso nao, entao é uma nova meal
+            else{
+
+                //Verifica o local em que a nova refeicao sera colocada
+                let newIndexPath = IndexPath(row: meals.count, section: 0)
+                
+                //Isso adiciona a nova refeição à lista existente de refeições no modelo de dados
+                meals.append(meal)
+                
+                //Insere a nova refeicao na table view
+                tableView.insertRows(at: [newIndexPath], with: .automatic)
+            }
             
-            //Isso adiciona a nova refeição à lista existente de refeições no modelo de dados
-            meals.append(meal)
-            
-            //Insere a nova refeicao na table view
-            tableView.insertRows(at: [newIndexPath], with: .automatic)
         }
         
     }
@@ -99,7 +160,26 @@ class MealTableViewController: UITableViewController {
         return cell
     }
     
-   
+    //Editando o botao de editar da table view e permite o scroll para o lado pra deletar
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        
+        //Caso seja o delete
+        if editingStyle == .delete{
+            
+            //Remove o meal do array de objetos
+            meals.remove(at: indexPath.row)
+            //Exclui na linha correspondente da tabela
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        }
+        else if editingStyle == .insert{
+            
+        }
+    }
+    
+    //Permite a edicao da linha
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
 
 
 }

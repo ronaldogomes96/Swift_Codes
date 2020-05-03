@@ -30,6 +30,14 @@ class MealViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
         //Informa que a view controler é o delegate desta variavel
         nameTextField.delegate = self
         
+        //Entra no if quando for uma edicao de uma meal ja existente
+        if let meal = meal{
+            navigationItem.title = meal.name
+            nameTextField.text = meal.name
+            photoImageView.image = meal.photo
+            ratingControl.rating = meal.rating
+        }
+        
         //Ative o botão Salvar apenas se o campo de texto tiver um nome de refeição válido.
         updateSaveButtonState()
     }
@@ -85,11 +93,28 @@ class MealViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
     
     //MARK: Navigation
     
-    //Acao do botao salvar
+    //Acao do botao cancelar
     @IBAction func cancel(_ sender: UIBarButtonItem) {
         
-        //Cancela a modal e retorna para a pagina anterior sem salvar nada
-        dismiss(animated: true, completion: nil)
+        //Dependendo do tipo de apresentacao, ele deve ser cancelado de uma forma diferente
+        
+        //Valor boleano que indica se a pagina foi aberta pelo botao de adicionar
+        let isPresentingInAddMealMode = presentingViewController is UINavigationController
+        
+        if isPresentingInAddMealMode{
+            //Cancela a modal e retorna para a pagina anterior sem salvar nada
+            dismiss(animated: true, completion: nil)
+        }
+        //É chamado se o usuário estiver editando uma refeição existente
+        else if let owningNavigationController = navigationController{
+            //Retorna na pilha de execucao
+            owningNavigationController.popViewController(animated: true)
+        }
+        else{
+            fatalError("The MealViewController is not inside a navigation controller.")
+        }
+        
+        
     }
     
     
