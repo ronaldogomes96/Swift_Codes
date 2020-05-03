@@ -8,13 +8,11 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class MealViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     //MARK: Propeties
     
     @IBOutlet weak var nameTextField: UITextField!
-    
-    @IBOutlet weak var mealNameLabel: UILabel!
     
     @IBOutlet weak var photoImageView: UIImageView!
     
@@ -40,7 +38,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
     //Funcao que é chamada logo apos textFieldShouldReturn
     //Pega o valor digitado no textfield
     func textFieldDidEndEditing(_ textField: UITextField) {
-        mealNameLabel.text = textField.text
+        
     }
     
     //MARK: UIImagePickerControllerDelegate
