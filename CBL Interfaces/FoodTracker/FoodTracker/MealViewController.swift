@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import os.log
 
 class MealViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
@@ -18,14 +19,29 @@ class MealViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
     
     @IBOutlet weak var ratingControl: RatingControl!
     
+    @IBOutlet weak var saveButton: UIBarButtonItem!
+    
+    //Propiedade da classe meal, um opcional
+    var meal: Meal?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         //Informa que a view controler é o delegate desta variavel
         nameTextField.delegate = self
+        
+        //Ative o botão Salvar apenas se o campo de texto tiver um nome de refeição válido.
+        updateSaveButtonState()
     }
     
     //MARK: UITextFieldDelegate
+    
+    //É chamado quando uma secao de edicao do textfield é exibido
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        
+        //Desativa o botao save enquanto essa opcao esta ativa
+        saveButton.isEnabled = false
+    }
     
     //Mostra o keyboard pra digitacao ate o usuario apertar enter / finalizar de escrever
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -39,6 +55,9 @@ class MealViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
     //Pega o valor digitado no textfield
     func textFieldDidEndEditing(_ textField: UITextField) {
         
+        //Verifica se o nome esta vazio
+        updateSaveButtonState()
+        navigationItem.title = textField.text
     }
     
     //MARK: UIImagePickerControllerDelegate
@@ -63,6 +82,36 @@ class MealViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
         dismiss(animated: true, completion: nil)
         
     }
+    
+    //MARK: Navigation
+    
+    //Acao do botao salvar
+    @IBAction func cancel(_ sender: UIBarButtonItem) {
+        
+        //Cancela a modal e retorna para a pagina anterior sem salvar nada
+        dismiss(animated: true, completion: nil)
+    }
+    
+    
+    // Permite configurar um view controller antes de ser apresentado.
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
+        
+        //Configura o destino apenas quando o savebutton for pressionado
+        guard let button = sender as? UIBarButtonItem, button === saveButton else{
+            os_log("The save button was not pressed, cancelling", log: OSLog.default, type: .debug)
+            return
+        }
+        
+        //Cria as constantes a partir do campo de texto atual, da imagem selecionada e da classificação na cena.
+        let name = nameTextField.text ?? ""
+        let photo = photoImageView.image
+        let rating = ratingControl.rating
+        
+        //Passa a meal para a classe
+        meal = Meal(name: name, photo: photo, rating: rating)
+    }
+    
 
     //MARK: Actions
     
@@ -82,6 +131,15 @@ class MealViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
         imagePickerController.delegate = self
         present(imagePickerController, animated: true, completion: nil )
         
+    }
+    
+    //MARK: Private Methods
+    
+    private func updateSaveButtonState(){
+        
+        //Desativa o botao salvar se o campo de texto estiver vazio
+        let text = nameTextField.text ?? ""
+        saveButton.isEnabled = !text.isEmpty
     }
     
 }

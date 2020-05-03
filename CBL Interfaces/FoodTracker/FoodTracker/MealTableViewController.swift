@@ -21,6 +21,25 @@ class MealTableViewController: UITableViewController {
         //Carrega os dados gerais da refeicao
         loadSampleMeals()
     }
+    
+    //MARK: Actions
+    
+    //Adiciona uma nova refeicao colocada pelo usuario a lista de refeicoes
+    @IBAction func unwindToMealList(sender: UIStoryboardSegue) {
+        
+        if let sourceViewController = sender.source as? MealViewController, let meal = sourceViewController.meal{
+            
+            //Verifica o local em que a nova refeicao sera colocada
+            let newIndexPath = IndexPath(row: meals.count, section: 0)
+            
+            //Isso adiciona a nova refeição à lista existente de refeições no modelo de dados
+            meals.append(meal)
+            
+            //Insere a nova refeicao na table view
+            tableView.insertRows(at: [newIndexPath], with: .automatic)
+        }
+        
+    }
 
     // MARK: Private methods
     
