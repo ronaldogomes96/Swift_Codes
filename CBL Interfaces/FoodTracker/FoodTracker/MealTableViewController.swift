@@ -22,8 +22,22 @@ class MealTableViewController: UITableViewController {
         //Cria o botao de edicao fornecido pelo sistema
         navigationItem.leftBarButtonItem = editButtonItem
         
+        // Carregue as refeições salvas, caso contrário, carregue dados de amostra.
+        if let savedMeals = loadMeals() {
+            meals += savedMeals
+        }else {
+            
+            // Carrega os dados padroes
+            loadSampleMeals()
+        }
+        
         //Carrega os dados gerais da refeicao
-        loadSampleMeals()
+        //loadSampleMeals()
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
     }
     
     //MARK: Navigation
@@ -98,6 +112,8 @@ class MealTableViewController: UITableViewController {
                 tableView.insertRows(at: [newIndexPath], with: .automatic)
             }
             
+            //Salvando as refeicoes
+            saveMeals()
         }
         
     }
@@ -127,7 +143,28 @@ class MealTableViewController: UITableViewController {
         meals += [meal1, meal2, meal3]
     }
     
-    //MARK: Metodos
+    //Salva o objeto meal no caminho
+    private func saveMeals(){
+        
+        //Este método tenta arquivar a matriz meals em um local específico e retorna true se for bem-sucedido.
+        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(meals, toFile: Meal.ArchiveURL.path)
+        
+        //Imprime uma mensagem de log do resultado
+        if isSuccessfulSave {
+            os_log("Meals successfully saved.", log: OSLog.default, type: .debug)
+        } else {
+            os_log("Failed to save meals...", log: OSLog.default, type: .error)
+        }
+    }
+    
+    //Pode retornar um array de objetos meals
+    private func loadMeals() -> [Meal]? {
+        
+        //Desarquiva o objeto armazenado nesse local especifico
+        return NSKeyedUnarchiver.unarchiveObject(withFile: Meal.ArchiveURL.path) as? [Meal]
+    }
+    
+    //MARK: Table view data source
     
     //Informa o numero de secoes que tera na table view
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -168,6 +205,10 @@ class MealTableViewController: UITableViewController {
             
             //Remove o meal do array de objetos
             meals.remove(at: indexPath.row)
+            
+            //Salvando as refeicoes
+            saveMeals()
+            
             //Exclui na linha correspondente da tabela
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
