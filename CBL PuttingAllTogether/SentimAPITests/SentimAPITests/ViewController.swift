@@ -44,8 +44,10 @@ class ViewController: UIViewController {
 
         //Parametros que serão enviados no corpo da solicitação HTTP
         let json: [String: Any] = ["text": "\(frase)"]
+        //Cria o json que sera enviado
         let jsonData = try? JSONSerialization.data(withJSONObject: json)
 
+        //Body da solicitacao http
         request.httpBody = jsonData
 
         //Executa a solicitação HTTP
@@ -62,7 +64,7 @@ class ViewController: UIViewController {
                 do {
                     let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String:Any]
                     print(json!["result"]!)
-                    self.polaridade.text = json!["result"]! as? String
+                    //self.polaridade.text = json!["result"]! as? String
                 } catch {
                     print("Something went wrong")
                 }
