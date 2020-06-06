@@ -18,6 +18,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var sentimento: UILabel!
     
+    var sentim: String?
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -63,13 +64,20 @@ class ViewController: UIViewController {
             if let data = data {
                 do {
                     let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String:Any]
-                    print(json!["result"]!)
-                    //self.polaridade.text = json!["result"]! as? String
+                    print(json!)
+                    let resultado = json!["result"]! as? Dictionary<String, Any>
+                    print(resultado!["type"]!)
+                    print(type(of:resultado!["type"]!))
+                    
+                    self.sentim = resultado!["type"]! as? String
+                    let polarity = resultado!["polarity"]! as! Double
+                    
                 } catch {
                     print("Something went wrong")
                 }
             }
         }
         task.resume()
+        self.sentimento.text = sentim
     }
 }
