@@ -13,7 +13,7 @@ class PlayData {
     //Todas as palavras do arquivo
     var allWords = [String]()
     //A quantidade de vez que cada palavra aparece
-    var wordCounts = [String : Int]()
+    var wordCounts: NSCountedSet!
     
     init() {
         if let path = Bundle.main.path(forResource: "plays", ofType: "txt") {
@@ -24,13 +24,11 @@ class PlayData {
                 //Filtra somente strings com algum valor
                 allWords = allWords.filter { $0 != "" }
                 
-                //Preenche o dicionario com as palavras, porem nao repete
-                for word in allWords{
-                    wordCounts[word, default: 0] += 1
-                }
-                
-                //Adiciona as palavras sem repeticao
-                allWords = Array(wordCounts.keys)
+                //Conjunto de palavras sem haver duplicada
+                wordCounts = NSCountedSet(array: allWords)
+                //Atualiza allWords por ordem
+                let sorted = wordCounts.allObjects.sorted { wordCounts.count(for: $0) > wordCounts.count(for: $1) }
+                allWords = sorted as! [String]
             }
         }
     }

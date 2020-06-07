@@ -13,10 +13,10 @@
 		778D66E1248C59A300E5AB12 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 778D66DF248C59A300E5AB12 /* Main.storyboard */; };
 		778D66E3248C59A400E5AB12 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 778D66E2248C59A400E5AB12 /* Assets.xcassets */; };
 		778D66E6248C59A400E5AB12 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 778D66E4248C59A400E5AB12 /* LaunchScreen.storyboard */; };
-		778D66F1248C59A500E5AB12 /* Project39Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778D66F0248C59A500E5AB12 /* Project39Tests.swift */; };
 		778D66FC248C59A500E5AB12 /* Project39UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778D66FB248C59A500E5AB12 /* Project39UITests.swift */; };
 		778D670A248C59BB00E5AB12 /* plays.txt in Resources */ = {isa = PBXBuildFile; fileRef = 778D6709248C59BB00E5AB12 /* plays.txt */; };
 		778D6712248C5E6C00E5AB12 /* PlayData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778D6711248C5E6C00E5AB12 /* PlayData.swift */; };
+		778D671B248C7B0200E5AB12 /* Project39Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778D66F0248C59A500E5AB12 /* Project39Tests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,7 +46,7 @@
 		778D66E5248C59A400E5AB12 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		778D66E7248C59A400E5AB12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		778D66EC248C59A500E5AB12 /* Project39Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Project39Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		778D66F0248C59A500E5AB12 /* Project39Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project39Tests.swift; sourceTree = "<group>"; };
+		778D66F0248C59A500E5AB12 /* Project39Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Project39Tests.swift; path = Project39Tests/Project39Tests.swift; sourceTree = SOURCE_ROOT; };
 		778D66F2248C59A500E5AB12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		778D66F7248C59A500E5AB12 /* Project39UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Project39UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		778D66FB248C59A500E5AB12 /* Project39UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project39UITests.swift; sourceTree = "<group>"; };
@@ -277,7 +277,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				778D66F1248C59A500E5AB12 /* Project39Tests.swift in Sources */,
+				778D671B248C7B0200E5AB12 /* Project39Tests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
