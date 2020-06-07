@@ -27,6 +27,7 @@ class ViewController: UITableViewController {
         //Imprime cada palavra na tela
         let word = playData.allWords[indexPath.row]
         cell.textLabel!.text = word
+        cell.detailTextLabel!.text = "\(playData.wordCounts[word]!)"
         return cell
     }
 }

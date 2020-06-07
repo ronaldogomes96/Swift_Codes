@@ -9,7 +9,11 @@
 import Foundation
 
 class PlayData {
+    
+    //Todas as palavras do arquivo
     var allWords = [String]()
+    //A quantidade de vez que cada palavra aparece
+    var wordCounts = [String : Int]()
     
     init() {
         if let path = Bundle.main.path(forResource: "plays", ofType: "txt") {
@@ -19,6 +23,14 @@ class PlayData {
                 
                 //Filtra somente strings com algum valor
                 allWords = allWords.filter { $0 != "" }
+                
+                //Preenche o dicionario com as palavras, porem nao repete
+                for word in allWords{
+                    wordCounts[word, default: 0] += 1
+                }
+                
+                //Adiciona as palavras sem repeticao
+                allWords = Array(wordCounts.keys)
             }
         }
     }
