@@ -27,6 +27,6 @@ class Project39Tests: XCTestCase {
             XCTAssertEqual verifica se o primeiro parametro é igual ao segundo
             Caso nao seja, o teste falhara e imprimira a mensagem "allWords must be 0"
          */
-        XCTAssertEqual(playData.allWords.count, 0, "allWords must be 0")
+        XCTAssertEqual(playData.allWords.count, 384001, "allWords must be 384001")
     }
 }
