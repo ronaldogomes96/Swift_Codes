@@ -14,6 +14,9 @@ class PlayData {
     var allWords = [String]()
     //A quantidade de vez que cada palavra aparece
     var wordCounts: NSCountedSet!
+    //Palavras filtradas pelo usuario
+    private (set) var filteredWords = [String]()
+
     
     init() {
         if let path = Bundle.main.path(forResource: "plays", ofType: "txt") {
@@ -31,5 +34,23 @@ class PlayData {
                 allWords = sorted as! [String]
             }
         }
+    }
+    
+    //Aplica o filtro que o usuario ira digitar, ou de numero de palavras ou do numero de vezes que ela aparece
+    func applyUserFilter(_ input: String) {
+        
+        //Se ele for um numero
+        if let userNumber = Int(input){
+            applyFilter { self.wordCounts.count(for: $0) >= userNumber }
+        }
+        //Se for uma string
+        else {
+            applyFilter { $0.range(of: input, options: .caseInsensitive) != nil }
+        }
+    }
+    
+    //Funcao que faz a mudanca na variavel filterwords
+    func applyFilter(_ filter: (String) -> Bool) {
+        filteredWords = allWords.filter(filter)
     }
 }

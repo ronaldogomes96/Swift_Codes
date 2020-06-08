@@ -40,6 +40,32 @@ class Project39Tests: XCTestCase {
         XCTAssertEqual(playData.wordCounts.count(for: "mortal"), 41, "Mortal does not appear 41 times")
     }
     
+    //Verifica se o numero de palavras esta correto
+    func testUserFilterWorks() {
+        
+        let playData = PlayData()
+        
+        playData.applyUserFilter("100")
+        //Indica que 495 palavras aparecem pelo menos 100 vezes
+        XCTAssertEqual(playData.filteredWords.count, 495)
+        
+        playData.applyUserFilter("1000")
+        XCTAssertEqual(playData.filteredWords.count, 55)
+
+        playData.applyUserFilter("10000")
+        XCTAssertEqual(playData.filteredWords.count, 1)
+        
+        //Indica que a palavra teste aparece 56 vezes
+        playData.applyUserFilter("test")
+        XCTAssertEqual(playData.filteredWords.count, 56)
+        
+        playData.applyUserFilter("swift")
+        XCTAssertEqual(playData.filteredWords.count, 7)
+        
+        playData.applyUserFilter("objective-c")
+        XCTAssertEqual(playData.filteredWords.count, 0)
+    }
+    
     //Verifica a velocidade e desempenho
     func testWordsLoadQuickly() {
         measure {
