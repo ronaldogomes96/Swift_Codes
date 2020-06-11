@@ -54,6 +54,8 @@ class ViewController: UIViewController {
         //Executa a solicitação HTTP
         let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
 
+            print("A RESPONSE É \(response!)")
+            
             //Checa se houve erro
             if let error = error {
                 print("Houve um erro em \(error)")
@@ -64,6 +66,7 @@ class ViewController: UIViewController {
             if let data = data {
                 do {
                     let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String:Any]
+                    print("O JSON É ")
                     print(json!)
                     let resultado = json!["result"]! as? Dictionary<String, Any>
                     print(resultado!["type"]!)
