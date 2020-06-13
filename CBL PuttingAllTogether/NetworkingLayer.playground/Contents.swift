@@ -137,3 +137,70 @@ class ServiceLayer {
     }
     
 }
+
+//Camada de modelo
+
+struct CollectionItem: Codable {
+    let title: String
+    let id: Int
+}
+struct CollectionItemId: Codable {
+    let productId: Int
+  
+    enum CodingKeys: String, CodingKey {
+        case productId = "product_id"
+    }
+}
+struct CollectionInfo: Codable {
+    let title: String
+    let productType: String
+    let variants: [VariantsInfo]
+    let image: ImageInfo
+    
+    enum CodingKeys: String, CodingKey {
+        case title
+        case productType = "product_type"
+        case variants
+        case image
+    }
+}
+
+struct VariantsInfo: Codable {
+    let title: String
+    let inventoryQuantity: Int
+    
+    enum CodingKeys: String, CodingKey {
+        case title
+        case inventoryQuantity = "inventory_quantity"
+    }
+}
+
+struct ImageInfo: Codable {
+    let path: String
+    
+    enum CodingKeys: String, CodingKey {
+        case path = "src"
+    }
+}
+
+/*
+    Agora podemos chamar nossa solicitação de rede, pois temos modelos para decodificar. Você deve ter
+    adivinhado, esses modelos serão o 'T' quando declararmos nossos genéricos. Então, vamos dar uma olhada em como
+    realmente dizemos à camada de serviço o que é o 'T'
+ */
+
+ServiceLayer.request(router: Router.getProductsInfo) { (result: Result<[String : [CollectionItem]], Error>) in
+    switch result {
+    case .success:
+        print(result)
+    case .failure:
+        print(result)
+    }
+}
+
+/*
+    Passamos no caso do roteador, que manipulará a construção da rota e especificaremos o tipo de resultado no
+    manipulador de conclusão. Depois que essa função é acionada, a função de solicitação sabe qual rota construir
+    e qual modelo decodificar. E depois que recebermos o objeto Result, ele será um caso de sucesso ou falha, que
+    você manipulará o que fazer nos dois casos.
+ */
