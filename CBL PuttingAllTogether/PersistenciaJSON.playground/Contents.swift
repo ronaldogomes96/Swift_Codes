@@ -9,7 +9,7 @@ let data = NSData(contentsOf: url!)
 func readJSONObject(object: [String: AnyObject]) {
     guard let title = object["dataTitle"] as? String,
         let version = object["swiftVersion"] as? Float,
-        let users = object["users"] as? [[String: AnyObject]] else { return }
+        let users = object["users"] as? [[String: AnyObject]]re else { return }
     _ = "Swift \(version) " + title
      
     for user in users {
