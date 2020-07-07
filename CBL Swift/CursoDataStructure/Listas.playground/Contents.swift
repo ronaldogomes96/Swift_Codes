@@ -22,6 +22,36 @@ let node1 = Node(value: 10)
 let node2 = Node(value: 15)
 node1.next = node2
 */
+
+//Unidade da pilha
+class Stack {
+    
+    var ll: LinkedList
+    
+    init(top: Node?) {
+        self.ll = LinkedList(head: top)
+    }
+    
+    // add a node to the top of the stack
+    func push(_ node: Node) {
+        ll.append(node)
+    }
+    
+    // remove and return the topmost node from the stack
+    func pop() -> Node? {
+        
+        var current = ll.head
+        
+        while let _ = current {
+            if current?.next == nil {
+                ll.deleteNode(withValue: current!.value)
+                return current
+            }
+            current = current?.next
+        }
+        return nil
+    }
+}
  
 //Agpra podemos criar uma classe que simule a lista encadiada
 
@@ -155,7 +185,8 @@ class LinkedList{
         }
 }
 
-// Test cases
+/*
+// Test cases for vinculedad list
 
 // Set up some Nodes
 let n1 = Node(value: 1)
@@ -183,4 +214,26 @@ ll.deleteNode(withValue: 1)
 print(ll.getNode(atPosition: 1)!.value) // Should print 2 now
 print(ll.getNode(atPosition: 2)!.value) // Should print 4 now
 print(ll.getNode(atPosition: 3)!.value) // Should print 3
+*/
+
+// Test cases for stacks
+// Set up some nodes
+let n1 = Node(value: 1)
+let n2 = Node(value: 2)
+let n3 = Node(value: 3)
+let n4 = Node(value: 4)
+
+// Start setting up a Stack
+let stack = Stack(top: n1)
+
+// Test stack functionality
+
+stack.push(n2)
+stack.push(n3)
+print(stack.pop()!.value) // Should be 3
+print(stack.pop()!.value) // Should be 2
+print(stack.pop()!.value) // Should be 1
+print(stack.pop()?.value) // Should be nil
+stack.push(n4)
+print(stack.pop()!.value) // Should be 4
 
