@@ -26,6 +26,7 @@ node1.next = node2
 //Unidade da pilha
 class Stack {
     
+    //Objeto da lista vinculada
     var ll: LinkedList
     
     init(top: Node?) {
@@ -34,22 +35,20 @@ class Stack {
     
     // add a node to the top of the stack
     func push(_ node: Node) {
-        ll.append(node)
+        
+        //Usando a adicao no inicio, pois otimiza o tempo de execucao
+        ll.insertNode(node, at: 1)
     }
     
     // remove and return the topmost node from the stack
     func pop() -> Node? {
         
-        var current = ll.head
-        
-        while let _ = current {
-            if current?.next == nil {
-                ll.deleteNode(withValue: current!.value)
-                return current
-            }
-            current = current?.next
+        //Deletando o inicio da pilha
+        let deletedNode = ll.getNode(atPosition: 1)
+        if let value = deletedNode?.value {
+            ll.deleteNode(withValue: value)
         }
-        return nil
+        return deletedNode
     }
 }
  
