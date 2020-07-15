@@ -40,6 +40,11 @@ class Graph {
     func getEdgeList() -> [[Int]] {
         var edgeList = [[Int]]()
         
+        for edgeObject in edges {
+            let edge = [edgeObject.value!, edgeObject.nodeFrom!.value!, edgeObject.nodeTo!.value!]
+            edgeList.append(edge)
+        }
+        
         return edgeList
     }
     
@@ -51,7 +56,19 @@ class Graph {
     func getAdjacencyList() -> [[[Int]]] {
         let max = getMaxIndex()
         var adjacencyList = [[[Int]]]()
-        
+
+        for _ in 0...max {
+            adjacencyList.append([])
+        }
+
+        for edgeObject in edges {
+            if !adjacencyList[(edgeObject.nodeFrom?.value)!].isEmpty {
+                adjacencyList[(edgeObject.nodeFrom?.value)!].append([edgeObject.nodeTo!.value!, edgeObject.value!])
+            } else {
+                adjacencyList[edgeObject.nodeFrom!.value!] = [[edgeObject.nodeTo!.value!, edgeObject.value!]]
+            }
+        }
+
         return adjacencyList
     }
     
@@ -62,6 +79,18 @@ class Graph {
     func getAdjacencyMatrix() -> [[Int]] {
         let max = getMaxIndex()
         var adjacencyMatrix = [[Int]]()
+        
+        for _ in 0...max {
+            var newArray: [Int] = []
+            for _ in 0...max {
+                newArray.append(0)
+            }
+            adjacencyMatrix.append(newArray)
+        }
+
+        for edgeObject in edges {
+            adjacencyMatrix[(edgeObject.nodeFrom?.value)!][(edgeObject.nodeTo?.value)!] = edgeObject.value!
+        }
         
         return adjacencyMatrix
     }
