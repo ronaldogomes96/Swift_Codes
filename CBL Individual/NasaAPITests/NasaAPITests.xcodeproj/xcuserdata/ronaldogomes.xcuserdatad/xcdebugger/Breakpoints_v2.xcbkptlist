@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "00647F6B-AC72-418B-AC43-7EB475CB5BAF"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B1B1575C-5E8F-4799-B257-73C6F30F7668"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NasaAPITests/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
+            landmarkName = "searchButton(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "B1B1575C-5E8F-4799-B257-73C6F30F7668 - 839fdb4a42508ff"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (NasaAPITests.Response) -&gt; () in NasaAPITests.ViewController.searchButton(__C.UIButton) -&gt; ()"
+                  moduleName = "NasaAPITests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ronaldogomes/Desktop/Swift_Codes/CBL%20Individual/NasaAPITests/NasaAPITests/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "26"
+                  endingLineNumber = "26"
+                  offsetFromSymbolStart = "87">
+               </Location>
+               <Location
+                  uuid = "B1B1575C-5E8F-4799-B257-73C6F30F7668 - 1d56465c070158bc"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (__C.UIImage) -&gt; () in closure #1 (NasaAPITests.Response) -&gt; () in NasaAPITests.ViewController.searchButton(__C.UIButton) -&gt; ()"
+                  moduleName = "NasaAPITests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ronaldogomes/Desktop/Swift_Codes/CBL%20Individual/NasaAPITests/NasaAPITests/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "27"
+                  endingLineNumber = "27"
+                  offsetFromSymbolStart = "158">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
