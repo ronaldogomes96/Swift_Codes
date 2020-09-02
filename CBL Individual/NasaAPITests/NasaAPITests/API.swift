@@ -55,12 +55,16 @@ class API {
     func fetchImage(url: String, completion: @escaping (UIImage) ->()) {
         
         let requestURL = requestUrl(url: url)
+        print(requestURL)
         
         let task = URLSession.shared.downloadTask(with: requestURL) { (Url, response, error) in
+            
+            
             guard let url = Url, error == nil else {
                 fatalError("Erron in \(String(describing: error))")
             }
             
+            print(url)
             do {
                 let data = try Data(contentsOf: url)
                 let imagePlanet = UIImage(data: data)

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<playground version='6.0' target-platform='ios' display-mode='raw'>
+    <pages>
+        <page name='Primeiros Passos'/>
+        <page name='Operadores Básicos'/>
+        <page name='Estruturas Condicionais'/>
+        <page name='Coleções'/>
+        <page name='Controle de Fluxo'/>
+        <page name='Funções'/>
+        <page name='Optionals'/>
+        <page name='Enumerations'/>
+        <page name='Classes e Structs'/>
+        <page name='Protocols'/>
+        <page name='Extensions'/>
+        <page name='Tratamento de Erros'/>
+        <page name='Generics'/>
+        <page name='Controle de Acesso'/>
+    </pages>
+</playground>
