@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "MLStarRating",
+        "repositoryURL": "https://github.com/micheltlutz/MLStarRating.git",
+        "state": {
+          "branch": null,
+          "revision": "e014882b1be78ba116b864e62ba4fe62297d52c6",
+          "version": "1.0.4"
+        }
+      }
+    ]
+  },
+  "version": 1
+}
