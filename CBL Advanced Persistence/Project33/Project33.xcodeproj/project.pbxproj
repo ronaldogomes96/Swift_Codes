@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		77399389253A5AE9009BAFA9 /* SubmitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77399388253A5AE9009BAFA9 /* SubmitViewController.swift */; };
+		77399393253A5D9F009BAFA9 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77399392253A5D9F009BAFA9 /* CloudKit.framework */; };
 		77923CB9253A432F00E2B3C7 /* SelectGenreTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77923CB8253A432F00E2B3C7 /* SelectGenreTableViewController.swift */; };
 		77923CBE253A452D00E2B3C7 /* AddCommentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77923CBD253A452D00E2B3C7 /* AddCommentsViewController.swift */; };
 		77E746342539CB0E00E78C88 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E746332539CB0E00E78C88 /* AppDelegate.swift */; };
@@ -38,6 +40,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		77399388253A5AE9009BAFA9 /* SubmitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitViewController.swift; sourceTree = "<group>"; };
+		7739938D253A5D91009BAFA9 /* Project33.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Project33.entitlements; sourceTree = "<group>"; };
+		77399392253A5D9F009BAFA9 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		77923CB8253A432F00E2B3C7 /* SelectGenreTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectGenreTableViewController.swift; sourceTree = "<group>"; };
 		77923CBD253A452D00E2B3C7 /* AddCommentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCommentsViewController.swift; sourceTree = "<group>"; };
 		77E746302539CB0E00E78C88 /* Project33.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Project33.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -62,6 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				77399393253A5D9F009BAFA9 /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,6 +88,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		77399391253A5D9F009BAFA9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				77399392253A5D9F009BAFA9 /* CloudKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		77E746272539CB0E00E78C88 = {
 			isa = PBXGroup;
 			children = (
@@ -89,6 +103,7 @@
 				77E746492539CB0F00E78C88 /* Project33Tests */,
 				77E746542539CB0F00E78C88 /* Project33UITests */,
 				77E746312539CB0E00E78C88 /* Products */,
+				77399391253A5D9F009BAFA9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -105,12 +120,14 @@
 		77E746322539CB0E00E78C88 /* Project33 */ = {
 			isa = PBXGroup;
 			children = (
+				7739938D253A5D91009BAFA9 /* Project33.entitlements */,
 				77E746332539CB0E00E78C88 /* AppDelegate.swift */,
 				77E746352539CB0E00E78C88 /* SceneDelegate.swift */,
 				77E746372539CB0E00E78C88 /* ViewController.swift */,
 				77E746662539D66E00E78C88 /* RecordWhistleViewController.swift */,
 				77923CB8253A432F00E2B3C7 /* SelectGenreTableViewController.swift */,
 				77923CBD253A452D00E2B3C7 /* AddCommentsViewController.swift */,
+				77399388253A5AE9009BAFA9 /* SubmitViewController.swift */,
 				77E746392539CB0E00E78C88 /* Main.storyboard */,
 				77E7463C2539CB0F00E78C88 /* Assets.xcassets */,
 				77E7463E2539CB0F00E78C88 /* LaunchScreen.storyboard */,
@@ -267,6 +284,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				77399389253A5AE9009BAFA9 /* SubmitViewController.swift in Sources */,
 				77E746382539CB0E00E78C88 /* ViewController.swift in Sources */,
 				77E746342539CB0E00E78C88 /* AppDelegate.swift in Sources */,
 				77E746672539D66E00E78C88 /* RecordWhistleViewController.swift in Sources */,
@@ -448,6 +466,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Project33/Project33.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 69Y77S7YQP;
 				INFOPLIST_FILE = Project33/Info.plist;
@@ -467,6 +486,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Project33/Project33.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 69Y77S7YQP;
 				INFOPLIST_FILE = Project33/Info.plist;

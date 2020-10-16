@@ -43,7 +43,7 @@ class AddCommentsViewController: UIViewController, UITextViewDelegate {
         let vc = SubmitViewController()
         vc.genre = genre
 
-        //Caso seja o placeholder nao faz nada
+        //Caso seja o placeholder nao passa nada
         if comments.text == placeholder {
             vc.comments = ""
         } else {
