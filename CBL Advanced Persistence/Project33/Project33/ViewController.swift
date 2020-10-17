@@ -39,7 +39,7 @@ class ViewController: UITableViewController {
     //Carrega os dados do cloudkit
     func loadWhistles() {
         
-        //Objeto que filtra os valores
+        //Objeto que filtra os valores, nesse caso pega todos
         let pred = NSPredicate(value: true)
         //diz ao CloudKit qual campo queremos classificar e se o queremos crescente ou decrescente.
         let sort = NSSortDescriptor(key: "creationDate", ascending: false)
@@ -120,6 +120,12 @@ class ViewController: UITableViewController {
         cell.textLabel?.attributedText =  makeAttributedString(title: whistles[indexPath.row].genre, subtitle: whistles[indexPath.row].comments)
         cell.textLabel?.numberOfLines = 0
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = ResultsViewController()
+        vc.whistle = whistles[indexPath.row]
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
 
