@@ -170,6 +170,11 @@ class ViewController: UITableViewController,NSFetchedResultsControllerDelegate {
         }
         */
         
+        let request = Commit.createFetchRequest()
+        
+        let sort = NSSortDescriptor(key: "date", ascending: false)
+        request.sortDescriptors = [sort]
+        
         fetchedResultsController = NSFetchedResultsController(fetchRequest: request, managedObjectContext: container.viewContext, sectionNameKeyPath: "author.name", cacheName: nil)
 
         
@@ -223,7 +228,7 @@ class ViewController: UITableViewController,NSFetchedResultsControllerDelegate {
         
         ac.addAction(UIAlertAction(title: "Show only Durian commits", style: .default) { [unowned self] _ in
             self.commitPredicate = NSPredicate(format: "author.name == 'Joe Groff'")
-            self.loadSavedData()
+            self.loadSaveData()
         })
 
         ac.addAction(UIAlertAction(title: "Cancel", style: .cancel))
@@ -257,7 +262,7 @@ class ViewController: UITableViewController,NSFetchedResultsControllerDelegate {
         }
     }
     
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         
         /*
         //Verifica se o tipo que o usuario clicou foi deletar

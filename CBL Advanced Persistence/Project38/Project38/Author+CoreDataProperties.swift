@@ -12,13 +12,13 @@ import CoreData
 
 extension Author {
 
-    @nonobjc public class func fetchRequest() -> NSFetchRequest<Author> {
+    @nonobjc public class func createFetchRequest() -> NSFetchRequest<Author> {
         return NSFetchRequest<Author>(entityName: "Author")
     }
 
-    @NSManaged public var email: String?
-    @NSManaged public var name: String?
-    @NSManaged public var commits: NSSet?
+    @NSManaged public var email: String
+    @NSManaged public var name: String
+    @NSManaged public var commits: NSSet
 
 }
 
