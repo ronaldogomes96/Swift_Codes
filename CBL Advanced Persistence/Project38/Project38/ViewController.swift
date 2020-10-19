@@ -12,6 +12,8 @@ class ViewController: UITableViewController {
     
     // Objeto que pode criar, ler, atualizar e excluir objetos Core Data inteiramente na memória, antes de gravar de volta no banco de dados de uma vez.
     var container: NSPersistentContainer!
+    //Array de objetos do tipo commit que serao salvos
+    var commits = [Commit]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +30,7 @@ class ViewController: UITableViewController {
         
         //Chama a funcao que busca commits no github
         performSelector(inBackground: #selector(fetchCommits), with: nil)
+        loadSaveData()
     }
     
     //Busca os commits na url do github
@@ -54,6 +57,7 @@ class ViewController: UITableViewController {
                 }
 
                 self.saveContext()
+                loadSaveData()
             }
         }
     }
@@ -84,7 +88,43 @@ class ViewController: UITableViewController {
             
         }
     }
+    
+    //Carrega os dados no core data
+    func loadSaveData() {
+        //Cria um fetch request para o commit
+        let request = Commit.createFetchRequest()
+        //Objeto que organiza como os dados irao ser carregados, nesse caso de acordo com o date
+        let sort = NSSortDescriptor(key: "date", ascending: false)
+        request.sortDescriptors = [sort]
+        
+        do {
+            //Faz o load da base de dados de acordo com o request ja configurado
+            commits = try container.viewContext.fetch(request)
+            //print("Got \(commits.count) commits")
+            tableView.reloadData()
+        } catch {
+            //Caso falhe
+            print("Fetch failed")
+        }
+    }
 
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return commits.count
+    }
+
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Commit", for: indexPath)
+
+        let commit = commits[indexPath.row]
+        cell.textLabel!.text = commit.message
+        cell.detailTextLabel!.text = commit.date.description
+
+        return cell
+    }
 
 }
 
