@@ -1,0 +1,20 @@
+//
+//  DetailViewController.swift
+//  Project38
+//
+//  Created by Ronaldo Gomes on 19/10/20.
+//
+
+import UIKit
+
+class DetailViewController: UIViewController {
+    
+    @IBOutlet weak var detailLabel: UILabel!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        // Do any additional setup after loading the view.
+    }
+
+}
