@@ -14,6 +14,8 @@ class ViewController: UITableViewController {
     var container: NSPersistentContainer!
     //Array de objetos do tipo commit que serao salvos
     var commits = [Commit]()
+    //Predicate serve com um filtro de querys
+    var commitPredicate: NSPredicate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,7 +24,8 @@ class ViewController: UITableViewController {
         container = NSPersistentContainer(name: "Project38")
         //carrega o banco de dados salvo se existir ou o cria de outra forma
         container.loadPersistentStores { storeDescription, error in
-            //Caso haja um erro
+            //Nao permite a duplicada de atributos
+            self.container.viewContext.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
             if let error = error {
                 print("Unresolved error \(error)")
             }
@@ -31,6 +34,10 @@ class ViewController: UITableViewController {
         //Chama a funcao que busca commits no github
         performSelector(inBackground: #selector(fetchCommits), with: nil)
         loadSaveData()
+        
+        //Botao que permite o usuario filtrar algo
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Filter", style: .plain, target: self, action: #selector(changeFilter))
+
     }
     
     //Busca os commits na url do github
@@ -97,6 +104,9 @@ class ViewController: UITableViewController {
         let sort = NSSortDescriptor(key: "date", ascending: false)
         request.sortDescriptors = [sort]
         
+        //Informa o predicate do request feito, no caso o tipo filtro
+        request.predicate = commitPredicate
+        
         do {
             //Faz o load da base de dados de acordo com o request ja configurado
             commits = try container.viewContext.fetch(request)
@@ -106,6 +116,37 @@ class ViewController: UITableViewController {
             //Caso falhe
             print("Fetch failed")
         }
+    }
+    
+    @objc func changeFilter() {
+        let ac = UIAlertController(title: "Filter commits…", message: nil, preferredStyle: .actionSheet)
+
+        //Sao opcoes que quando clicadas acionam a closure
+        ac.addAction(UIAlertAction(title: "Show only fixes", style: .default) { [unowned self] _ in
+            //Filtra com essa mensagem em string. Funciona como uma query de banco de dados
+            self.commitPredicate = NSPredicate(format: "message CONTAINS[c] 'fix'")
+            self.loadSaveData()
+        })
+        
+        ac.addAction(UIAlertAction(title: "Ignore Pull Requests", style: .default) { [unowned self] _ in
+            self.commitPredicate = NSPredicate(format: "NOT message BEGINSWITH 'Merge pull request'")
+            self.loadSaveData()
+        })
+        
+        ac.addAction(UIAlertAction(title: "Show only recent", style: .default) { [unowned self] _ in
+            let twelveHoursAgo = Date().addingTimeInterval(-43200)
+            //%@ indica a variavel que vem apos a string
+            self.commitPredicate = NSPredicate(format: "date > %@", twelveHoursAgo as NSDate)
+            self.loadSaveData()
+        })
+        
+        ac.addAction(UIAlertAction(title: "Show all commits", style: .default) { [unowned self] _ in
+            self.commitPredicate = nil
+            self.loadSaveData()
+        })
+
+        ac.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+        present(ac, animated: true)
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
