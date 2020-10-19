@@ -17,6 +17,7 @@
 		779116D1253DBBA300C882AE /* Project38UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779116D0253DBBA300C882AE /* Project38UITests.swift */; };
 		779116E2253DBC6B00C882AE /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779116E1253DBC6B00C882AE /* SwiftyJSON.swift */; };
 		779116E7253DBEAE00C882AE /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779116E6253DBEAE00C882AE /* DetailViewController.swift */; };
+		779116ED253DC0A700C882AE /* Project38.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 779116EB253DC0A700C882AE /* Project38.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		779116D2253DBBA300C882AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		779116E1253DBC6B00C882AE /* SwiftyJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		779116E6253DBEAE00C882AE /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		779116EC253DC0A700C882AE /* Project38.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Project38.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 				779116B9253DBBA300C882AE /* LaunchScreen.storyboard */,
 				779116BC253DBBA300C882AE /* Info.plist */,
 				779116E1253DBC6B00C882AE /* SwiftyJSON.swift */,
+				779116EB253DC0A700C882AE /* Project38.xcdatamodeld */,
 			);
 			path = Project38;
 			sourceTree = "<group>";
@@ -268,6 +271,7 @@
 				779116AF253DBBA200C882AE /* AppDelegate.swift in Sources */,
 				779116E7253DBEAE00C882AE /* DetailViewController.swift in Sources */,
 				779116B1253DBBA200C882AE /* SceneDelegate.swift in Sources */,
+				779116ED253DC0A700C882AE /* Project38.xcdatamodeld in Sources */,
 				779116E2253DBC6B00C882AE /* SwiftyJSON.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -601,6 +605,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		779116EB253DC0A700C882AE /* Project38.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				779116EC253DC0A700C882AE /* Project38.xcdatamodel */,
+			);
+			currentVersion = 779116EC253DC0A700C882AE /* Project38.xcdatamodel */;
+			path = Project38.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 779116A3253DBBA200C882AE /* Project object */;
 }
