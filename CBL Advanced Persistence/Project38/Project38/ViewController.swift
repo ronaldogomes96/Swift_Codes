@@ -25,6 +25,49 @@ class ViewController: UITableViewController {
                 print("Unresolved error \(error)")
             }
         }
+        
+        //Chama a funcao que busca commits no github
+        performSelector(inBackground: #selector(fetchCommits), with: nil)
+    }
+    
+    //Busca os commits na url do github
+    @objc func fetchCommits() {
+        
+        //Tranforma a url em string
+        if let data = try? String(contentsOf: URL(string: "https://api.github.com/repos/apple/swift/commits?per_page=100")!) {
+            //Passa o data para o parse do json
+            let jsonCommits = JSON(parseJSON: data)
+
+            //Le os commits do json
+            let jsonCommitArray = jsonCommits.arrayValue
+
+            //print("Received \(jsonCommitArray.count) new commits.")
+
+            //Volta para a thread principal
+            DispatchQueue.main.async { [unowned self] in
+                //Para cada commit do array de objetos
+                for jsonCommit in jsonCommitArray {
+                    //Pega a configuracao da classe do model, passando o container atual
+                    let commit = Commit(context: self.container.viewContext)
+                    //Envia para a configuracao de objetos de commit
+                    self.configure(commit: commit, usingJSON: jsonCommit)
+                }
+
+                self.saveContext()
+            }
+        }
+    }
+    
+    //Configura o objeto commit de acordo com os dados de cada json
+    func configure(commit: Commit, usingJSON json: JSON) {
+        //Passa os argumentos no formato key - value
+        commit.sha = json["sha"].stringValue
+        commit.message = json["commit"]["message"].stringValue
+        commit.url = json["html_url"].stringValue
+
+        //Faz o parse de ISO8601 para o tipo date
+        let formatter = ISO8601DateFormatter()
+        commit.date = formatter.date(from: json["commit"]["committer"]["date"].stringValue) ?? Date()
     }
     
     //Salva as mudancas na memoria para a base dados
