@@ -15,6 +15,7 @@
 		77E733952559F86C00AD24D4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77E733932559F86C00AD24D4 /* LaunchScreen.storyboard */; };
 		77E733A02559F86C00AD24D4 /* GestureRecognitionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E7339F2559F86C00AD24D4 /* GestureRecognitionTests.swift */; };
 		77E733AB2559F86C00AD24D4 /* GestureRecognitionUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E733AA2559F86C00AD24D4 /* GestureRecognitionUITests.swift */; };
+		77E733BC2559F8A800AD24D4 /* example_5s0_hand_model.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 77E733BB2559F8A800AD24D4 /* example_5s0_hand_model.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		77E733A62559F86C00AD24D4 /* GestureRecognitionUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GestureRecognitionUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		77E733AA2559F86C00AD24D4 /* GestureRecognitionUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GestureRecognitionUITests.swift; sourceTree = "<group>"; };
 		77E733AC2559F86C00AD24D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		77E733BB2559F8A800AD24D4 /* example_5s0_hand_model.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = example_5s0_hand_model.mlmodel; path = "../../../../../Downloads/Gesture-Recognition-101-CoreML-ARKit-master/Gesture-Recognition-101-CoreML-ARKit/example_5s0_hand_model.mlmodel"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				77E733912559F86C00AD24D4 /* Assets.xcassets */,
 				77E733932559F86C00AD24D4 /* LaunchScreen.storyboard */,
 				77E733962559F86C00AD24D4 /* Info.plist */,
+				77E733BB2559F8A800AD24D4 /* example_5s0_hand_model.mlmodel */,
 			);
 			path = GestureRecognition;
 			sourceTree = "<group>";
@@ -261,6 +264,7 @@
 				77E7338D2559F86C00AD24D4 /* ViewController.swift in Sources */,
 				77E733892559F86C00AD24D4 /* AppDelegate.swift in Sources */,
 				77E7338B2559F86C00AD24D4 /* SceneDelegate.swift in Sources */,
+				77E733BC2559F8A800AD24D4 /* example_5s0_hand_model.mlmodel in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
