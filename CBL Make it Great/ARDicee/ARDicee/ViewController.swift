@@ -90,24 +90,29 @@ class ViewController: UIViewController, ARSCNViewDelegate {
             let touchLocation = touch.location(in: sceneView)
             
             //Funcao do arkit que tenta pegar a posicao 3D
-            let results = sceneView.hitTest(touchLocation, types: .existingPlaneUsingExtent)
+            let results = sceneView.raycastQuery(from: touchLocation, allowing: .existingPlaneGeometry, alignment: .horizontal)
             
             //Verificando se o resultado é valido
-            if let hitResults = results.first {
-                
-                // Create a new scene
-                let diceScene = SCNScene(named: "art.scnassets/diceCollada.scn")!
-                //Pega os nodes da arvore dessa scene
-                if let diceNode = diceScene.rootNode.childNode(withName: "Dice", recursively: true) {
-                    
-                    //Podemos agora pegar a posicao real do touch
-                    diceNode.position = SCNVector3(
-                        hitResults.worldTransform.columns.3.x,
-                        hitResults.worldTransform.columns.3.y,
-                        hitResults.worldTransform.columns.3.z
-                    )
-                    sceneView.scene.rootNode.addChildNode(diceNode)
-                    
+            if let hitResults = results {
+                addDice(atLocation: hitResults)
+            }
+        }
+    }
+    
+    func addDice(atLocation location: ARRaycastQuery){
+        // Create a new scene
+        let diceScene = SCNScene(named: "art.scnassets/diceCollada.scn")!
+        //Pega os nodes da arvore dessa scene
+        if let diceNode = diceScene.rootNode.childNode(withName: "Dice", recursively: true) {
+            
+            //Podemos agora pegar a posicao real do touch
+            diceNode.position = SCNVector3(
+                location.direction.x,
+                location.direction.y,
+                location.direction.z
+            )
+            sceneView.scene.rootNode.addChildNode(diceNode)
+            
 //                    //Para fazer a animacao, temos que pegar um numero aleatorio das posicoes de x e z
 //                    let randomX = Float(arc4random_uniform(4) + 1) * (Float.pi/2)
 //                    let randomZ = Float(arc4random_uniform(4) + 1) * (Float.pi/2)
@@ -121,10 +126,8 @@ class ViewController: UIViewController, ARSCNViewDelegate {
 //                            duration: 0.5
 //                        )
 //                    )
-                    
-                    roll(dice: diceNode)
-                }
-            }
+            
+            roll(dice: diceNode)
         }
     }
     
@@ -174,32 +177,36 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     //É chamado todas as vezes em que for detectado um novo no plano na tela
     func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
         
-        //Verifica se a ancora recebida pode ser do tipo ARPlaneAnchor
-        if anchor is ARPlaneAnchor {
-            
-            let planeAnchor = anchor as! ARPlaneAnchor
-            
-            //Pega o plano de acordo com as coordenadas do anchor
-            let plane = SCNPlane(width: CGFloat(planeAnchor.extent.x), height: CGFloat(planeAnchor.extent.z))
-            
-            //Criar o node  que ira ser o plano
-            let planeNode = SCNNode()
-            
-            //definindo sua posicao de acordo com o anchor
-            planeNode.position = SCNVector3(CGFloat(planeAnchor.center.x), 0, CGFloat(planeAnchor.center.z))
-            //Temos que transforma-lo para se comportar da forma correta no plano
-            planeNode.transform = SCNMatrix4MakeRotation(-Float.pi/2, 1, 0, 0)
-            
-            //Personalizando o node
-            let gridMaterial = SCNMaterial()
-            
-            gridMaterial.diffuse.contents = UIImage(named: "art.scnassets/grid.png")
-            
-            plane.materials = [gridMaterial]
-            
-            planeNode.geometry = plane
-            
-            node.addChildNode(planeNode)
-        }
+        guard let planeAnchor = anchor as? ARPlaneAnchor else {return}
+        
+        let planeNode = createPlane(withPlaneAnchor: planeAnchor)
+        
+        node.addChildNode(planeNode)
+    }
+       
+    func createPlane(withPlaneAnchor planeAnchor: ARPlaneAnchor) -> SCNNode {
+        
+        //Pega o plano de acordo com as coordenadas do anchor
+        let plane = SCNPlane(width: CGFloat(planeAnchor.extent.x), height: CGFloat(planeAnchor.extent.z))
+        
+        //Criar o node  que ira ser o plano
+        let planeNode = SCNNode()
+        
+        //definindo sua posicao de acordo com o anchor
+        planeNode.position = SCNVector3(CGFloat(planeAnchor.center.x), 0, CGFloat(planeAnchor.center.z))
+        //Temos que transforma-lo para se comportar da forma correta no plano
+        planeNode.transform = SCNMatrix4MakeRotation(-Float.pi/2, 1, 0, 0)
+        
+        //Personalizando o node
+        let gridMaterial = SCNMaterial()
+        
+        gridMaterial.diffuse.contents = UIImage(named: "art.scnassets/grid.png")
+        
+        plane.materials = [gridMaterial]
+        
+        planeNode.geometry = plane
+        
+        return planeNode
+        
     }
 }
