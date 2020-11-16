@@ -159,6 +159,13 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         rollAll()
     }
     
+    @IBAction func removeAllDice(_ sender: UIBarButtonItem) {
+        if !diceNodesArray.isEmpty {
+            for dice in diceNodesArray {
+                dice.removeFromParentNode()
+            }
+        }
+    }
     //Acionado quando a tela é balancada
     override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
         rollAll()
