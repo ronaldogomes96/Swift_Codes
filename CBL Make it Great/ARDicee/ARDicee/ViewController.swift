@@ -11,6 +11,8 @@ import ARKit
 
 class ViewController: UIViewController, ARSCNViewDelegate {
 
+    var diceNodesArray = [SCNNode]()
+
     @IBOutlet var sceneView: ARSCNView!
     
     override func viewDidLoad() {
@@ -105,9 +107,61 @@ class ViewController: UIViewController, ARSCNViewDelegate {
                         hitResults.worldTransform.columns.3.z
                     )
                     sceneView.scene.rootNode.addChildNode(diceNode)
+                    
+//                    //Para fazer a animacao, temos que pegar um numero aleatorio das posicoes de x e z
+//                    let randomX = Float(arc4random_uniform(4) + 1) * (Float.pi/2)
+//                    let randomZ = Float(arc4random_uniform(4) + 1) * (Float.pi/2)
+//
+//                    //Criar a animacao com uma funcao do sceneKit
+//                    diceNode.runAction(
+//                        SCNAction.rotateBy(
+//                            x: CGFloat(randomX * 5),
+//                            y: 0,
+//                            z: CGFloat(randomZ * 5),
+//                            duration: 0.5
+//                        )
+//                    )
+                    
+                    roll(dice: diceNode)
                 }
             }
         }
+    }
+    
+    //Rola todos os dados
+    func rollAll() {
+        if !diceNodesArray.isEmpty {
+            for dice in diceNodesArray {
+                roll(dice: dice)
+            }
+        }
+    }
+    
+    //Rola um dado node especifico
+    func roll(dice: SCNNode) {
+        
+        //Para fazer a animacao, temos que pegar um numero aleatorio das posicoes de x e z
+        let randomX = Float(arc4random_uniform(4) + 1) * (Float.pi/2)
+        let randomZ = Float(arc4random_uniform(4) + 1) * (Float.pi/2)
+        
+        //Criar a animacao com uma funcao do sceneKit
+        dice.runAction(
+            SCNAction.rotateBy(
+                x: CGFloat(randomX * 5),
+                y: 0,
+                z: CGFloat(randomZ * 5),
+                duration: 0.5
+            )
+        )
+    }
+    
+    @IBAction func rollAgain(_ sender: UIBarButtonItem) {
+        rollAll()
+    }
+    
+    //Acionado quando a tela é balancada
+    override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
+        rollAll()
     }
     
     //É chamado todas as vezes em que for detectado um novo no plano na tela
