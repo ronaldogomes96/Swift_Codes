@@ -28,7 +28,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         
         //Podemos personalizar os elementos com materials
         let materials = SCNMaterial()
-        materials.diffuse.contents = UIImage(named: "art.scnassets/moon.jpg")
+        materials.diffuse.contents = UIImage(named: "art.scnassets/moon.png")
         
         //Entao adicionamos ao cube como array pois pode receber mais de um
         //cube.materials = [materials]
@@ -77,6 +77,37 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         
         // Pause the view's session
         sceneView.session.pause()
+    }
+    
+    //Funcao que é chamada quando a tela é clicada
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
+        //Verificamos o primeiro toque, ja que é um array
+        if let touch = touches.first {
+            //Pegamos entao a localizacao desse touch, de acordo com a scene view
+            let touchLocation = touch.location(in: sceneView)
+            
+            //Funcao do arkit que tenta pegar a posicao 3D
+            let results = sceneView.hitTest(touchLocation, types: .existingPlaneUsingExtent)
+            
+            //Verificando se o resultado é valido
+            if let hitResults = results.first {
+                
+                // Create a new scene
+                let diceScene = SCNScene(named: "art.scnassets/diceCollada.scn")!
+                //Pega os nodes da arvore dessa scene
+                if let diceNode = diceScene.rootNode.childNode(withName: "Dice", recursively: true) {
+                    
+                    //Podemos agora pegar a posicao real do touch
+                    diceNode.position = SCNVector3(
+                        hitResults.worldTransform.columns.3.x,
+                        hitResults.worldTransform.columns.3.y,
+                        hitResults.worldTransform.columns.3.z
+                    )
+                    sceneView.scene.rootNode.addChildNode(diceNode)
+                }
+            }
+        }
     }
     
     //É chamado todas as vezes em que for detectado um novo no plano na tela
