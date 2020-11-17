@@ -11,7 +11,7 @@ import ARKit
 
 class ViewController: UIViewController, ARSCNViewDelegate {
 
-    var diceNodesArray = [SCNNode]()
+    let arkitModel = ArkitModel()
 
     @IBOutlet var sceneView: ARSCNView!
     
@@ -64,14 +64,9 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        // Cria a configuracao inicial da sessao, possibilitando a captura do mundo 3D
-        let configuration = ARWorldTrackingConfiguration()
-        
-        configuration.planeDetection = .horizontal
 
         // Run the view's session
-        sceneView.session.run(configuration)
+        sceneView.session.run(arkitModel.configuration)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -94,84 +89,25 @@ class ViewController: UIViewController, ARSCNViewDelegate {
             
             //Verificando se o resultado é valido
             if let hitResults = results {
-                addDice(atLocation: hitResults)
+                let diceNode = arkitModel.addDice(atLocation: hitResults)
+                sceneView.scene.rootNode.addChildNode(diceNode!)
+                arkitModel.roll(dice: diceNode!)
             }
         }
     }
     
-    func addDice(atLocation location: ARRaycastQuery){
-        // Create a new scene
-        let diceScene = SCNScene(named: "art.scnassets/diceCollada.scn")!
-        //Pega os nodes da arvore dessa scene
-        if let diceNode = diceScene.rootNode.childNode(withName: "Dice", recursively: true) {
-            
-            //Podemos agora pegar a posicao real do touch
-            diceNode.position = SCNVector3(
-                location.direction.x,
-                location.direction.y,
-                location.direction.z
-            )
-            sceneView.scene.rootNode.addChildNode(diceNode)
-            
-//                    //Para fazer a animacao, temos que pegar um numero aleatorio das posicoes de x e z
-//                    let randomX = Float(arc4random_uniform(4) + 1) * (Float.pi/2)
-//                    let randomZ = Float(arc4random_uniform(4) + 1) * (Float.pi/2)
-//
-//                    //Criar a animacao com uma funcao do sceneKit
-//                    diceNode.runAction(
-//                        SCNAction.rotateBy(
-//                            x: CGFloat(randomX * 5),
-//                            y: 0,
-//                            z: CGFloat(randomZ * 5),
-//                            duration: 0.5
-//                        )
-//                    )
-            
-            roll(dice: diceNode)
-        }
-    }
     
-    //Rola todos os dados
-    func rollAll() {
-        if !diceNodesArray.isEmpty {
-            for dice in diceNodesArray {
-                roll(dice: dice)
-            }
-        }
-    }
-    
-    //Rola um dado node especifico
-    func roll(dice: SCNNode) {
-        
-        //Para fazer a animacao, temos que pegar um numero aleatorio das posicoes de x e z
-        let randomX = Float(arc4random_uniform(4) + 1) * (Float.pi/2)
-        let randomZ = Float(arc4random_uniform(4) + 1) * (Float.pi/2)
-        
-        //Criar a animacao com uma funcao do sceneKit
-        dice.runAction(
-            SCNAction.rotateBy(
-                x: CGFloat(randomX * 5),
-                y: 0,
-                z: CGFloat(randomZ * 5),
-                duration: 0.5
-            )
-        )
-    }
     
     @IBAction func rollAgain(_ sender: UIBarButtonItem) {
-        rollAll()
+        arkitModel.rollAll()
     }
     
     @IBAction func removeAllDice(_ sender: UIBarButtonItem) {
-        if !diceNodesArray.isEmpty {
-            for dice in diceNodesArray {
-                dice.removeFromParentNode()
-            }
-        }
+        arkitModel.removeAllDices()
     }
     //Acionado quando a tela é balancada
     override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
-        rollAll()
+        arkitModel.rollAll()
     }
     
     //É chamado todas as vezes em que for detectado um novo no plano na tela
@@ -179,34 +115,8 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         
         guard let planeAnchor = anchor as? ARPlaneAnchor else {return}
         
-        let planeNode = createPlane(withPlaneAnchor: planeAnchor)
+        let planeNode = arkitModel.createPlane(withPlaneAnchor: planeAnchor)
         
         node.addChildNode(planeNode)
-    }
-       
-    func createPlane(withPlaneAnchor planeAnchor: ARPlaneAnchor) -> SCNNode {
-        
-        //Pega o plano de acordo com as coordenadas do anchor
-        let plane = SCNPlane(width: CGFloat(planeAnchor.extent.x), height: CGFloat(planeAnchor.extent.z))
-        
-        //Criar o node  que ira ser o plano
-        let planeNode = SCNNode()
-        
-        //definindo sua posicao de acordo com o anchor
-        planeNode.position = SCNVector3(CGFloat(planeAnchor.center.x), 0, CGFloat(planeAnchor.center.z))
-        //Temos que transforma-lo para se comportar da forma correta no plano
-        planeNode.transform = SCNMatrix4MakeRotation(-Float.pi/2, 1, 0, 0)
-        
-        //Personalizando o node
-        let gridMaterial = SCNMaterial()
-        
-        gridMaterial.diffuse.contents = UIImage(named: "art.scnassets/grid.png")
-        
-        plane.materials = [gridMaterial]
-        
-        planeNode.geometry = plane
-        
-        return planeNode
-        
     }
 }
