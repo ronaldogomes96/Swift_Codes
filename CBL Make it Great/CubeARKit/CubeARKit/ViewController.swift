@@ -33,7 +33,7 @@ class ViewController: UIViewController {
         sceneView.debugOptions = [.showFeaturePoints]
         addTapGesture()
         addPinchGesture()
-        addRotationGesture()
+        //addRotationGesture()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -83,7 +83,7 @@ class ViewController: UIViewController {
     
     //Permite o click na tela
     private func addTapGesture() {
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(didTap(_:)))
+        let tapGesture = UIPanGestureRecognizer(target: self, action: #selector(didTap(_:)))
         self.sceneView.addGestureRecognizer(tapGesture)
     }
     
@@ -93,36 +93,50 @@ class ViewController: UIViewController {
         self.sceneView.addGestureRecognizer(pinchGesture)
     }
     
-    //Permite a rotacao do objeto
-    private func addRotationGesture() {
-        let panGesture = UIRotationGestureRecognizer(target: self, action: #selector(didRotate(_:)))
-        self.sceneView.addGestureRecognizer(panGesture)
-    }
+//    //Permite a rotacao do objeto
+//    private func addRotationGesture() {
+//        let panGesture = UIRotationGestureRecognizer(target: self, action: #selector(didRotate(_:)))
+//        self.sceneView.addGestureRecognizer(panGesture)
+//    }
     
     //Funcao do click da tela que recebe como parametro esse click
     @objc func didTap(_ gesture: UIPanGestureRecognizer) {
         //Definimos a posicao do click da tela
         let tapLocation = gesture.location(in: self.sceneView)
         //Entao passamos como parametro do hitTest e achamos o local no SceneKit view
-        let results = self.sceneView.hitTest(tapLocation, types: .featurePoint)
+        let results = self.sceneView.raycastQuery(from: tapLocation, allowing: .estimatedPlane, alignment: .horizontal)
         
-        //Caso os pontos de contato tenham sido encontrados, recebemos o primeiro e seguimos em frente, caso contrário, completamos a função.
-        guard let result = results.first else {
-            return
+        
+        switch gesture.state {
+        case .began:
+            //Caso os pontos de contato tenham sido encontrados, recebemos o primeiro e seguimos em frente, caso contrário, completamos a função.
+            guard let result = results else {
+                return
+            }
+            
+            //Usando o campo worldTransform do ponto de contato, determinamos as coordenadas deste ponto no sistema de coordenadas do mundo real, no caso, x y z result.worldTransform.translation
+            let translation = result.direction
+            
+            //Se o objeto existe, mudamos sua posição
+            guard let node = self.node else {
+                //caso contrário, chamamos a função de addBox e passamos as coordenadas do ponto de contato para ele.
+                self.addBox(x: translation.x, y: translation.y, z: translation.z)
+                return
+            }
+            //Mudando a posicao
+            self.node.position = SCNVector3Make(translation.x, translation.y, translation.z)
+            self.sceneView.scene.rootNode.addChildNode(self.node)
+
+        case .changed:
+            let hitResult = sceneView.hitTest(tapLocation, types: .existingPlane)
+            if !hitResult.isEmpty{
+                guard let hitResult = hitResult.last else { return }
+                node.position = SCNVector3Make(hitResult.worldTransform.columns.3.x, hitResult.worldTransform.columns.3.y, hitResult.worldTransform.columns.3.z)
+            }
+
+        default:
+            break
         }
-        
-        //Usando o campo worldTransform do ponto de contato, determinamos as coordenadas deste ponto no sistema de coordenadas do mundo real, no caso, x y z
-        let translation = result.worldTransform.translation
-        
-        //Se o objeto existe, mudamos sua posição
-        guard let node = self.node else {
-            //caso contrário, chamamos a função de addBox e passamos as coordenadas do ponto de contato para ele.
-            self.addBox(x: translation.x, y: translation.y, z: translation.z)
-            return
-        }
-        //Mudando a posicao
-        node.position = SCNVector3Make(translation.x, translation.y, translation.z)
-        self.sceneView.scene.rootNode.addChildNode(self.node)
     }
 
     //Funcao do gesto do usuario
@@ -156,25 +170,25 @@ class ViewController: UIViewController {
         }
     }
     
-    //Varivael de rotacao
-    private var lastRotation: Float = 0
-    
-    @objc func didRotate(_ gesture: UIRotationGestureRecognizer) {
-        
-        
-        //Caso o status do gesto
-        switch gesture.state {
-        //QUando mudado
-        case .changed:
-            //Mudamos o angulo de y
-            self.node.eulerAngles.y = self.lastRotation + Float(gesture.rotation)
-        case .ended:
-            //Salvamos o ultimo valor da rotacao
-            self.lastRotation += Float(gesture.rotation)
-        default:
-            break
-        }
-    }
+//    //Varivael de rotacao
+//    private var lastRotation: Float = 0
+//
+//    @objc func didRotate(_ gesture: UIRotationGestureRecognizer) {
+//
+//
+//        //Caso o status do gesto
+//        switch gesture.state {
+//        //QUando mudado
+//        case .changed:
+//            //Mudamos o angulo de y
+//            self.node.eulerAngles.y = self.lastRotation + Float(gesture.rotation)
+//        case .ended:
+//            //Salvamos o ultimo valor da rotacao
+//            self.lastRotation += Float(gesture.rotation)
+//        default:
+//            break
+//        }
+//    }
 }
 
 //É a extensão para float4 × 4, o que torna o trabalho com as coordenadas mais conveniente.
