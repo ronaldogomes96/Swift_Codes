@@ -19,6 +19,7 @@
 		771358FD257B081600776700 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 771358FC257B081600776700 /* CloudKit.framework */; };
 		77135905257B1E5700776700 /* Report.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77135904257B1E5700776700 /* Report.swift */; };
 		77135910257B257300776700 /* AddWordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7713590F257B257300776700 /* AddWordViewController.swift */; };
+		77D3B801257BE22E00243D25 /* ReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D3B800257BE22E00243D25 /* ReportViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 		771358FC257B081600776700 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		77135904257B1E5700776700 /* Report.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Report.swift; sourceTree = "<group>"; };
 		7713590F257B257300776700 /* AddWordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWordViewController.swift; sourceTree = "<group>"; };
+		77D3B800257BE22E00243D25 /* ReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +116,7 @@
 				771358C6257B076C00776700 /* SceneDelegate.swift */,
 				771358C8257B076C00776700 /* WordsController.swift */,
 				7713590F257B257300776700 /* AddWordViewController.swift */,
+				77D3B800257BE22E00243D25 /* ReportViewController.swift */,
 				77135904257B1E5700776700 /* Report.swift */,
 				771358CD257B076C00776700 /* LetrandoPersistenceTests.xcdatamodeld */,
 				771358FA257B081300776700 /* LetrandoPersistenceTests.entitlements */,
@@ -287,6 +290,7 @@
 				771358C5257B076C00776700 /* AppDelegate.swift in Sources */,
 				771358CF257B076C00776700 /* LetrandoPersistenceTests.xcdatamodeld in Sources */,
 				771358C7257B076C00776700 /* SceneDelegate.swift in Sources */,
+				77D3B801257BE22E00243D25 /* ReportViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -20,6 +20,7 @@ class AddWordViewController: UIViewController {
     
     @IBAction func okButton(_ sender: UIButton) {
         Report.createReport(word: wordField.text ?? "")
+        _ = navigationController?.popToRootViewController(animated: true)
     }
     
 }

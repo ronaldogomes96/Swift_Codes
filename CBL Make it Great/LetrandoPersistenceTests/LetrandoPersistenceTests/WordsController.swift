@@ -40,8 +40,8 @@ class WordsController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         
-        cell.textLabel?.text = reports[indexPath.row].word
-        cell.detailTextLabel?.text = DateFormatter().string(for: reports[indexPath.row].data)
+        cell.textLabel?.text = "\(reports[indexPath.row].word!) - Data: \((reports[indexPath.row].data?.description(with: .current))!)"
+        //cell.detailTextLabel?.text = DateFormatter().string(for: reports[indexPath.row].data)
         return cell
     }
 

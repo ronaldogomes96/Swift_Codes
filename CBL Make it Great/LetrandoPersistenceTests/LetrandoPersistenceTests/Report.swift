@@ -28,4 +28,10 @@ class Report: NSManagedObject {
         }
         return report
     }
+    
+    static func numberOfLearnedWords() -> Int {
+        let words = Report.readReports()?.map({ $0.word })
+        return Array(Set(words!)).count
+        
+    }
 }
