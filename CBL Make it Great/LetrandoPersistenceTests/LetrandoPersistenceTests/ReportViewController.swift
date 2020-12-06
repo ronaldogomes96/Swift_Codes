@@ -21,6 +21,14 @@ class ReportViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         numberOfWordLearned.text = "\(Report.numberOfLearnedWords())"
+        numberOfMediaWordLearned.text = "\(Report.mediaOfWordsInWeek())"
+        let rank = Report.getMostSearchWords()
+        rankOfWords.text = "\(String(describing: rank![0]))\n\(String(describing: rank![1]))\n\(String(describing: rank![2]))\n"
+        var words = ""
+        for i in 1...7 {
+            words += "\(String(describing: Report.getWordsADay()![i]!))\n"
+        }
+        wordsADay.text = words
 
         // Do any additional setup after loading the view.
     }
