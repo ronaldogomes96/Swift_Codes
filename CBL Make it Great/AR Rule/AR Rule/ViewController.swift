@@ -14,6 +14,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     @IBOutlet var sceneView: ARSCNView!
     
     var dotNodes = [SCNNode]()
+    var textNode = SCNNode()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,25 +47,35 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     // Chamado a cada toque do usuario na tela
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         
+        if dotNodes.count >= 2 {
+            for dot in dotNodes {
+                dot.removeFromParentNode()
+            }
+            dotNodes = [SCNNode]()
+        }
+        
         if let touchLocation = touches.first?.location(in: sceneView) {
-            
+            print("fjnfekjfnek")
             // Local no espaco 3d dentro do mundo real
             guard let raycastQueryResults = sceneView.raycastQuery(from: touchLocation,
-                                                           allowing: .estimatedPlane,
-                                                           alignment: .horizontal) else {
+                                                                   allowing: .existingPlaneGeometry,
+                                                                   alignment: .any) else {
                 fatalError()
             }
-            if let rayqueryResult = sceneView.session.raycast(raycastQueryResults).last {
-                addDot(at: rayqueryResult)
-            }
+            
+            addDot(at: raycastQueryResults.direction)
+////            if let rayqueryResult = sceneView.session.raycast(raycastQueryResults).first {
+////                addDot(at: rayqueryResult)
+////            }
+//            let hitNode = sceneView.hitTest(touchLocation).first
         }
     }
     
     
     // Adiciona um ponto onde o usuario clicou
-    func addDot(at rayqueryResult: ARRaycastResult) {
+    func addDot(at rayqueryResult: simd_float3) {
         
-        let dotGeometry = SCNSphere(radius: 0.005)
+        let dotGeometry = SCNSphere(radius: 0.05)
         let material = SCNMaterial()
         material.diffuse.contents = UIColor.red
         
@@ -72,9 +83,9 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         
         let dotNode = SCNNode(geometry: dotGeometry)
         
-        dotNode.position = SCNVector3(rayqueryResult.worldTransform.columns.3.x,
-                                      rayqueryResult.worldTransform.columns.3.y,
-                                      rayqueryResult.worldTransform.columns.3.z)
+        dotNode.position = SCNVector3Make(rayqueryResult.x,
+                                          rayqueryResult.y,
+                                          rayqueryResult.z)
         
         sceneView.scene.rootNode.addChildNode(dotNode)
         
@@ -96,7 +107,24 @@ class ViewController: UIViewController, ARSCNViewDelegate {
             pow(end.position.z - start.position.z, 2)
         )
         
-        print(abs(distance))
+        updateText(text: "\(abs(distance))", atPosition: end.position)
+    }
+    
+    func updateText(text: String, atPosition position: SCNVector3) {
+        
+        textNode.removeFromParentNode()
+        
+        let textGeometry = SCNText(string: text, extrusionDepth: 1.0)
+        
+        textGeometry.firstMaterial?.diffuse.contents = UIColor.white
+        
+        textNode = SCNNode(geometry: textGeometry)
+        
+        textNode.position = SCNVector3(position.x, position.y + 0.01, position.z)
+        
+        textNode.scale = SCNVector3(0.01, 0.01, 0.01)
+        
+        sceneView.scene.rootNode.addChildNode(textNode)
     }
     
 }
