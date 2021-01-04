@@ -21,6 +21,9 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         
         // Show statistics such as fps and timing information
         sceneView.showsStatistics = true
+        
+        // Ajusta as luzes automaticamente
+        sceneView.autoenablesDefaultLighting = true
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -59,6 +62,31 @@ class ViewController: UIViewController, ARSCNViewDelegate {
             //Pegamos o plano da imagem
             let plane = SCNPlane(width: imageAnchor.referenceImage.physicalSize.width,
                                  height: imageAnchor.referenceImage.physicalSize.height)
+            
+            plane.firstMaterial?.diffuse.contents = UIColor(white: 1.0, alpha: 0.5)
+            
+            let planeNode = SCNNode(geometry: plane)
+            
+            // Rotacionamos o angulo em 90 graus no sentido anti horario
+            planeNode.eulerAngles.x = -.pi / 2
+            
+            node.addChildNode(planeNode)
+            
+            //Pegamos a referencia do arquivo scn
+            if let planetScene = SCNScene(named: "art.scnassets/Earth.scn") {
+                
+                // Pegamos o node deste arquivo
+                if let planetNode = planetScene.rootNode.childNodes.first {
+                    
+                    // Rotacionamos em 90 graus no sentido horario
+                    planeNode.eulerAngles.x = .pi / 2
+                    
+                    // Adicionamos esta referencia
+                    planeNode.addChildNode(planetNode)
+                    
+                    print("AIAIAIAIAIAI")
+                }
+            }
         }
         
         return node
