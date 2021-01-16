@@ -1,0 +1,15 @@
+{
+  "images" : [
+    {
+      "filename" : "harry potter.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  },
+  "properties" : {
+    "width" : 0.074922600619195048
+  }
+}
