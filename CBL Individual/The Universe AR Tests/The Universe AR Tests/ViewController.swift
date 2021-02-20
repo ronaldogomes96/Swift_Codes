@@ -44,12 +44,14 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         node.runAction(repeatAction)
         
         sceneView.allowsCameraControl = true
+        //sceneView.cameraControlConfiguration.autoSwitchToFreeCamera = false
+        
         
         sceneView.scene.rootNode.addChildNode(node)
         
-        addPinchGesture()
-        
-        addRotationGesture()
+//        addPinchGesture()
+//
+//        addRotationGesture()
 
     }
     
