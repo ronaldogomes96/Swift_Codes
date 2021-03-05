@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "58796D43-6BBB-4C11-9A05-C2412518577B"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CEC7CA5B-F8A7-42BB-905D-D8FEA3FF1D83"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Dispenser/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
+            landmarkName = "serveAction(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "859D5207-63E7-4B46-A0B1-EA040E377291"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Dispenser/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "serveAction(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A645D825-3130-4971-8E9B-7C46EDC4A401"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Dispenser/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "serveAction(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "A645D825-3130-4971-8E9B-7C46EDC4A401 - 528bff9cd7efb272"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Dispenser.ViewController.serveAction(__C.UIButton) -&gt; ()"
+                  moduleName = "Dispenser"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ronaldogomes/Desktop/Swift_Codes/CBL%20Games/Dispenser/Dispenser/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "32"
+                  endingLineNumber = "32"
+                  offsetFromSymbolStart = "87">
+               </Location>
+               <Location
+                  uuid = "A645D825-3130-4971-8E9B-7C46EDC4A401 - 528bff9cd7efb272"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Dispenser.ViewController.serveAction(__C.UIButton) -&gt; ()"
+                  moduleName = "Dispenser"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ronaldogomes/Desktop/Swift_Codes/CBL%20Games/Dispenser/Dispenser/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "32"
+                  endingLineNumber = "32"
+                  offsetFromSymbolStart = "150">
+               </Location>
+               <Location
+                  uuid = "A645D825-3130-4971-8E9B-7C46EDC4A401 - 528bff9cd7efb272"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Dispenser.ViewController.serveAction(__C.UIButton) -&gt; ()"
+                  moduleName = "Dispenser"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ronaldogomes/Desktop/Swift_Codes/CBL%20Games/Dispenser/Dispenser/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "32"
+                  endingLineNumber = "32"
+                  offsetFromSymbolStart = "378">
+               </Location>
+               <Location
+                  uuid = "A645D825-3130-4971-8E9B-7C46EDC4A401 - 528bff9cd7efb272"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Dispenser.ViewController.serveAction(__C.UIButton) -&gt; ()"
+                  moduleName = "Dispenser"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ronaldogomes/Desktop/Swift_Codes/CBL%20Games/Dispenser/Dispenser/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "32"
+                  endingLineNumber = "32"
+                  offsetFromSymbolStart = "883">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A9599F2A-3E3D-4C23-B389-C507BF775235"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Dispenser/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
+            landmarkName = "serveAction(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9F4B196B-4C76-422C-8A48-C95288BAB746"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Dispenser/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "serveAction(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
