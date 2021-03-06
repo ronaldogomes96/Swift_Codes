@@ -34,6 +34,10 @@ class GameScene: SKScene {
         makeBouncer(at: CGPoint(x: 512, y: 300))
         makeBouncer(at: CGPoint(x: 768, y: 300))
         makeBouncer(at: CGPoint(x: 1024, y: 300))
+        makeSlot(at: CGPoint(x: 128, y: 300), isGood: true)
+        makeSlot(at: CGPoint(x: 384, y: 300), isGood: false)
+        makeSlot(at: CGPoint(x: 640, y: 300), isGood: true)
+        makeSlot(at: CGPoint(x: 896, y: 300), isGood: false)
     }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -56,5 +60,32 @@ class GameScene: SKScene {
         bouncer.physicsBody = SKPhysicsBody(circleOfRadius: bouncer.size.width / 2.0)
         bouncer.physicsBody?.isDynamic = false
         addChild(bouncer)
+    }
+    
+    //Faz e adiciona os possiveis slots, bons e ruins
+    func makeSlot(at position: CGPoint, isGood: Bool) {
+        var slotBase: SKSpriteNode
+        var slotGlow: SKSpriteNode
+        
+        //Sao dois slots diferentes, para fazer um efeito de circulo com lamina
+        if isGood {
+            slotBase = SKSpriteNode(imageNamed: "slotBaseGood")
+            slotGlow = SKSpriteNode(imageNamed: "slotGlowGood")
+        } else {
+            slotBase = SKSpriteNode(imageNamed: "slotBaseBad")
+            slotGlow = SKSpriteNode(imageNamed: "slotGlowBad")
+        }
+        
+        //Adicionamos a posicao de ambos
+        slotBase.position = position
+        slotGlow.position = position
+        
+        addChild(slotBase)
+        addChild(slotGlow)
+        
+        //Entao adicionamos uma action para girar eternamente o circulo
+        let spin = SKAction.rotate(byAngle: .pi, duration: 10)
+        let spinForever = SKAction.repeatForever(spin)
+        slotGlow.run(spinForever)
     }
 }
