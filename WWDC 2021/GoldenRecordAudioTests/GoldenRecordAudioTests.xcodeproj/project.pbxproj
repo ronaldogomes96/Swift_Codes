@@ -1,0 +1,602 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		774A6EC0262739A500118893 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774A6EBF262739A500118893 /* AppDelegate.swift */; };
+		774A6EC2262739A500118893 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774A6EC1262739A500118893 /* SceneDelegate.swift */; };
+		774A6EC4262739A500118893 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774A6EC3262739A500118893 /* ViewController.swift */; };
+		774A6EC7262739A500118893 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 774A6EC5262739A500118893 /* Main.storyboard */; };
+		774A6EC9262739A600118893 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 774A6EC8262739A600118893 /* Assets.xcassets */; };
+		774A6ECC262739A600118893 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 774A6ECA262739A600118893 /* LaunchScreen.storyboard */; };
+		774A6ED7262739A600118893 /* GoldenRecordAudioTestsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774A6ED6262739A600118893 /* GoldenRecordAudioTestsTests.swift */; };
+		774A6EE2262739A600118893 /* GoldenRecordAudioTestsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774A6EE1262739A600118893 /* GoldenRecordAudioTestsUITests.swift */; };
+		775ECB0026286A8C0053DEE5 /* GoldenRecord in Resources */ = {isa = PBXBuildFile; fileRef = 775ECAFF26286A8C0053DEE5 /* GoldenRecord */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		774A6ED3262739A600118893 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 774A6EB4262739A500118893 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 774A6EBB262739A500118893;
+			remoteInfo = GoldenRecordAudioTests;
+		};
+		774A6EDE262739A600118893 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 774A6EB4262739A500118893 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 774A6EBB262739A500118893;
+			remoteInfo = GoldenRecordAudioTests;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		774A6EBC262739A500118893 /* GoldenRecordAudioTests.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoldenRecordAudioTests.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		774A6EBF262739A500118893 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		774A6EC1262739A500118893 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		774A6EC3262739A500118893 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		774A6EC6262739A500118893 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		774A6EC8262739A600118893 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		774A6ECB262739A600118893 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		774A6ECD262739A600118893 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		774A6ED2262739A600118893 /* GoldenRecordAudioTestsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GoldenRecordAudioTestsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		774A6ED6262739A600118893 /* GoldenRecordAudioTestsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoldenRecordAudioTestsTests.swift; sourceTree = "<group>"; };
+		774A6ED8262739A600118893 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		774A6EDD262739A600118893 /* GoldenRecordAudioTestsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GoldenRecordAudioTestsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		774A6EE1262739A600118893 /* GoldenRecordAudioTestsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoldenRecordAudioTestsUITests.swift; sourceTree = "<group>"; };
+		774A6EE3262739A600118893 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		775ECAFF26286A8C0053DEE5 /* GoldenRecord */ = {isa = PBXFileReference; lastKnownFileType = folder; path = GoldenRecord; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		774A6EB9262739A500118893 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		774A6ECF262739A600118893 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		774A6EDA262739A600118893 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		774A6EB3262739A500118893 = {
+			isa = PBXGroup;
+			children = (
+				774A6EBE262739A500118893 /* GoldenRecordAudioTests */,
+				774A6ED5262739A600118893 /* GoldenRecordAudioTestsTests */,
+				774A6EE0262739A600118893 /* GoldenRecordAudioTestsUITests */,
+				774A6EBD262739A500118893 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		774A6EBD262739A500118893 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				774A6EBC262739A500118893 /* GoldenRecordAudioTests.app */,
+				774A6ED2262739A600118893 /* GoldenRecordAudioTestsTests.xctest */,
+				774A6EDD262739A600118893 /* GoldenRecordAudioTestsUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		774A6EBE262739A500118893 /* GoldenRecordAudioTests */ = {
+			isa = PBXGroup;
+			children = (
+				774A6EBF262739A500118893 /* AppDelegate.swift */,
+				774A6EC1262739A500118893 /* SceneDelegate.swift */,
+				774A6EC3262739A500118893 /* ViewController.swift */,
+				774A6EC5262739A500118893 /* Main.storyboard */,
+				774A6EC8262739A600118893 /* Assets.xcassets */,
+				775ECAFF26286A8C0053DEE5 /* GoldenRecord */,
+				774A6ECA262739A600118893 /* LaunchScreen.storyboard */,
+				774A6ECD262739A600118893 /* Info.plist */,
+			);
+			path = GoldenRecordAudioTests;
+			sourceTree = "<group>";
+		};
+		774A6ED5262739A600118893 /* GoldenRecordAudioTestsTests */ = {
+			isa = PBXGroup;
+			children = (
+				774A6ED6262739A600118893 /* GoldenRecordAudioTestsTests.swift */,
+				774A6ED8262739A600118893 /* Info.plist */,
+			);
+			path = GoldenRecordAudioTestsTests;
+			sourceTree = "<group>";
+		};
+		774A6EE0262739A600118893 /* GoldenRecordAudioTestsUITests */ = {
+			isa = PBXGroup;
+			children = (
+				774A6EE1262739A600118893 /* GoldenRecordAudioTestsUITests.swift */,
+				774A6EE3262739A600118893 /* Info.plist */,
+			);
+			path = GoldenRecordAudioTestsUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		774A6EBB262739A500118893 /* GoldenRecordAudioTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 774A6EE6262739A600118893 /* Build configuration list for PBXNativeTarget "GoldenRecordAudioTests" */;
+			buildPhases = (
+				774A6EB8262739A500118893 /* Sources */,
+				774A6EB9262739A500118893 /* Frameworks */,
+				774A6EBA262739A500118893 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GoldenRecordAudioTests;
+			productName = GoldenRecordAudioTests;
+			productReference = 774A6EBC262739A500118893 /* GoldenRecordAudioTests.app */;
+			productType = "com.apple.product-type.application";
+		};
+		774A6ED1262739A600118893 /* GoldenRecordAudioTestsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 774A6EE9262739A600118893 /* Build configuration list for PBXNativeTarget "GoldenRecordAudioTestsTests" */;
+			buildPhases = (
+				774A6ECE262739A600118893 /* Sources */,
+				774A6ECF262739A600118893 /* Frameworks */,
+				774A6ED0262739A600118893 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				774A6ED4262739A600118893 /* PBXTargetDependency */,
+			);
+			name = GoldenRecordAudioTestsTests;
+			productName = GoldenRecordAudioTestsTests;
+			productReference = 774A6ED2262739A600118893 /* GoldenRecordAudioTestsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		774A6EDC262739A600118893 /* GoldenRecordAudioTestsUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 774A6EEC262739A600118893 /* Build configuration list for PBXNativeTarget "GoldenRecordAudioTestsUITests" */;
+			buildPhases = (
+				774A6ED9262739A600118893 /* Sources */,
+				774A6EDA262739A600118893 /* Frameworks */,
+				774A6EDB262739A600118893 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				774A6EDF262739A600118893 /* PBXTargetDependency */,
+			);
+			name = GoldenRecordAudioTestsUITests;
+			productName = GoldenRecordAudioTestsUITests;
+			productReference = 774A6EDD262739A600118893 /* GoldenRecordAudioTestsUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		774A6EB4262739A500118893 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1240;
+				LastUpgradeCheck = 1240;
+				TargetAttributes = {
+					774A6EBB262739A500118893 = {
+						CreatedOnToolsVersion = 12.4;
+					};
+					774A6ED1262739A600118893 = {
+						CreatedOnToolsVersion = 12.4;
+						TestTargetID = 774A6EBB262739A500118893;
+					};
+					774A6EDC262739A600118893 = {
+						CreatedOnToolsVersion = 12.4;
+						TestTargetID = 774A6EBB262739A500118893;
+					};
+				};
+			};
+			buildConfigurationList = 774A6EB7262739A500118893 /* Build configuration list for PBXProject "GoldenRecordAudioTests" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 774A6EB3262739A500118893;
+			productRefGroup = 774A6EBD262739A500118893 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				774A6EBB262739A500118893 /* GoldenRecordAudioTests */,
+				774A6ED1262739A600118893 /* GoldenRecordAudioTestsTests */,
+				774A6EDC262739A600118893 /* GoldenRecordAudioTestsUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		774A6EBA262739A500118893 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				775ECB0026286A8C0053DEE5 /* GoldenRecord in Resources */,
+				774A6ECC262739A600118893 /* LaunchScreen.storyboard in Resources */,
+				774A6EC9262739A600118893 /* Assets.xcassets in Resources */,
+				774A6EC7262739A500118893 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		774A6ED0262739A600118893 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		774A6EDB262739A600118893 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		774A6EB8262739A500118893 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				774A6EC4262739A500118893 /* ViewController.swift in Sources */,
+				774A6EC0262739A500118893 /* AppDelegate.swift in Sources */,
+				774A6EC2262739A500118893 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		774A6ECE262739A600118893 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				774A6ED7262739A600118893 /* GoldenRecordAudioTestsTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		774A6ED9262739A600118893 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				774A6EE2262739A600118893 /* GoldenRecordAudioTestsUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		774A6ED4262739A600118893 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 774A6EBB262739A500118893 /* GoldenRecordAudioTests */;
+			targetProxy = 774A6ED3262739A600118893 /* PBXContainerItemProxy */;
+		};
+		774A6EDF262739A600118893 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 774A6EBB262739A500118893 /* GoldenRecordAudioTests */;
+			targetProxy = 774A6EDE262739A600118893 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		774A6EC5262739A500118893 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				774A6EC6262739A500118893 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		774A6ECA262739A600118893 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				774A6ECB262739A600118893 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		774A6EE4262739A600118893 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		774A6EE5262739A600118893 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		774A6EE7262739A600118893 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 69Y77S7YQP;
+				INFOPLIST_FILE = GoldenRecordAudioTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ronaldoGomes.GoldenRecordAudioTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		774A6EE8262739A600118893 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 69Y77S7YQP;
+				INFOPLIST_FILE = GoldenRecordAudioTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ronaldoGomes.GoldenRecordAudioTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		774A6EEA262739A600118893 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 69Y77S7YQP;
+				INFOPLIST_FILE = GoldenRecordAudioTestsTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ronaldoGomes.GoldenRecordAudioTestsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GoldenRecordAudioTests.app/GoldenRecordAudioTests";
+			};
+			name = Debug;
+		};
+		774A6EEB262739A600118893 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 69Y77S7YQP;
+				INFOPLIST_FILE = GoldenRecordAudioTestsTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ronaldoGomes.GoldenRecordAudioTestsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GoldenRecordAudioTests.app/GoldenRecordAudioTests";
+			};
+			name = Release;
+		};
+		774A6EED262739A600118893 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 69Y77S7YQP;
+				INFOPLIST_FILE = GoldenRecordAudioTestsUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ronaldoGomes.GoldenRecordAudioTestsUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = GoldenRecordAudioTests;
+			};
+			name = Debug;
+		};
+		774A6EEE262739A600118893 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 69Y77S7YQP;
+				INFOPLIST_FILE = GoldenRecordAudioTestsUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ronaldoGomes.GoldenRecordAudioTestsUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = GoldenRecordAudioTests;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		774A6EB7262739A500118893 /* Build configuration list for PBXProject "GoldenRecordAudioTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				774A6EE4262739A600118893 /* Debug */,
+				774A6EE5262739A600118893 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		774A6EE6262739A600118893 /* Build configuration list for PBXNativeTarget "GoldenRecordAudioTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				774A6EE7262739A600118893 /* Debug */,
+				774A6EE8262739A600118893 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		774A6EE9262739A600118893 /* Build configuration list for PBXNativeTarget "GoldenRecordAudioTestsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				774A6EEA262739A600118893 /* Debug */,
+				774A6EEB262739A600118893 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		774A6EEC262739A600118893 /* Build configuration list for PBXNativeTarget "GoldenRecordAudioTestsUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				774A6EED262739A600118893 /* Debug */,
+				774A6EEE262739A600118893 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 774A6EB4262739A500118893 /* Project object */;
+}
