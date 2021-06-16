@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D1ECC312267ABB840016037B /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1ECC311267ABB840016037B /* main.swift */; };
+		D1ECC319267ABBCC0016037B /* Perceptron.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1ECC318267ABBCC0016037B /* Perceptron.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +26,7 @@
 /* Begin PBXFileReference section */
 		D1ECC30E267ABB840016037B /* MLModels */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = MLModels; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1ECC311267ABB840016037B /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		D1ECC318267ABBCC0016037B /* Perceptron.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Perceptron.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 			isa = PBXGroup;
 			children = (
 				D1ECC311267ABB840016037B /* main.swift */,
+				D1ECC318267ABBCC0016037B /* Perceptron.swift */,
 			);
 			path = MLModels;
 			sourceTree = "<group>";
@@ -120,6 +123,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D1ECC312267ABB840016037B /* main.swift in Sources */,
+				D1ECC319267ABBCC0016037B /* Perceptron.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
