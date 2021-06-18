@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D10A0C39267B73A600679E4B /* LinearRegression.swift in Sources */ = {isa = PBXBuildFile; fileRef = D10A0C38267B73A600679E4B /* LinearRegression.swift */; };
 		D1ECC312267ABB840016037B /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1ECC311267ABB840016037B /* main.swift */; };
 		D1ECC319267ABBCC0016037B /* Perceptron.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1ECC318267ABBCC0016037B /* Perceptron.swift */; };
 /* End PBXBuildFile section */
@@ -24,6 +25,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		D10A0C38267B73A600679E4B /* LinearRegression.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinearRegression.swift; sourceTree = "<group>"; };
 		D1ECC30E267ABB840016037B /* MLModels */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = MLModels; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1ECC311267ABB840016037B /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		D1ECC318267ABBCC0016037B /* Perceptron.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Perceptron.swift; sourceTree = "<group>"; };
@@ -61,6 +63,7 @@
 			children = (
 				D1ECC311267ABB840016037B /* main.swift */,
 				D1ECC318267ABBCC0016037B /* Perceptron.swift */,
+				D10A0C38267B73A600679E4B /* LinearRegression.swift */,
 			);
 			path = MLModels;
 			sourceTree = "<group>";
@@ -124,6 +127,7 @@
 			files = (
 				D1ECC312267ABB840016037B /* main.swift in Sources */,
 				D1ECC319267ABBCC0016037B /* Perceptron.swift in Sources */,
+				D10A0C39267B73A600679E4B /* LinearRegression.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
