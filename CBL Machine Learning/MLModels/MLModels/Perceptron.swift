@@ -18,19 +18,19 @@ class Perceptron {
     }
     
     func predict(data: [Double]) -> Int {
-        var sumOfWeights: Double = 0.0
+        var sumOfWeightsMultipliedData: Double = 0.0
         
         for (position, x) in data.enumerated() {
-            sumOfWeights += x * weights[position]
+            sumOfWeightsMultipliedData += x * weights[position]
         }
         
-        return degree(sum: sumOfWeights)
+        return degree(sum: sumOfWeightsMultipliedData)
     }
     
     func train(data: [[Double]], targets: [Int]) {
-        var sumOfWeights: Double = 0.0
         var hadErros = [Bool]()
         
+        // Inicializando o vetor de pesos com valores aleatorios
         data[0].forEach { _ in
             weights.append(Double.random(in: -1...1))
         }
@@ -38,12 +38,10 @@ class Perceptron {
         for epoch in 0...epochs {
             hadErros = []
             
+            // Interacao em cada linha da matriz
             for (positionLine, line) in data.enumerated() {
-                for (posi, x) in line.enumerated() {
-                    sumOfWeights += x * weights[posi]
-                }
+                let sinal = predict(data: line)
                 
-                let sinal = degree(sum: sumOfWeights)
                 print("\(sinal) \(targets[positionLine])")
                 
                 if sinal != targets[positionLine] {
@@ -56,6 +54,7 @@ class Perceptron {
             
             print("Epoch \(epoch) \nWeights \(weights)\n\n")
             
+            // Caso nao exista erro, entao o treinamento termina
             if !hadErros.contains(true) {
                 return
             }
@@ -69,8 +68,10 @@ class Perceptron {
     
     private func updateWeights(xData: [Double], expectSinal: Int, realSinal: Int) {
         let error = expectSinal - realSinal
+        
+        // Para cada posicao, atualiza o peso de acordo com a formula: w = w + (nex)
         for (position, x) in xData.enumerated() {
-            weights[position] = weights[position] + (rate * Double(error) * x)
+            weights[position] += (rate * Double(error) * x)
         }
     }
 }
