@@ -38,6 +38,8 @@ class Perceptron {
         for epoch in 0...epochs {
             hadErros = []
             
+            print("Epoch \(epoch) \nWeights \(weights)\n\n")
+            
             // Interacao em cada linha da matriz
             for (positionLine, line) in data.enumerated() {
                 let sinal = predict(data: line)
@@ -51,8 +53,6 @@ class Perceptron {
                     hadErros.append(false)
                 }
             }
-            
-            print("Epoch \(epoch) \nWeights \(weights)\n\n")
             
             // Caso nao exista erro, entao o treinamento termina
             if !hadErros.contains(true) {

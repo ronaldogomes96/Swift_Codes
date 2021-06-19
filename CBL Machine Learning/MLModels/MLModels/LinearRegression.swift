@@ -56,7 +56,7 @@ class LinearRegression {
             if epoch >= 1 {
                 
                 // Se o custo esta estabilizado, entao o treinamento termina
-                if abs((coast[epoch] - coast[epoch - 1])) > 0.00005{
+                if abs((coast[epoch] - coast[epoch - 1])) < 0.5{
                     break
                 }
             }
