@@ -9,17 +9,19 @@
 /* Begin PBXBuildFile section */
 		D19B3811267E87A800944C57 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19B3810267E87A800944C57 /* main.swift */; };
 		D19B3818267E87C600944C57 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19B3817267E87C600944C57 /* File.swift */; };
+		D1A4B5642680B101004C531A /* Iris.csv in CopyFiles */ = {isa = PBXBuildFile; fileRef = D19B381C267E996D00944C57 /* Iris.csv */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		D19B380B267E87A800944C57 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = /usr/share/man/man1/;
-			dstSubfolderSpec = 0;
+			buildActionMask = 12;
+			dstPath = "";
+			dstSubfolderSpec = 7;
 			files = (
+				D1A4B5642680B101004C531A /* Iris.csv in CopyFiles */,
 			);
-			runOnlyForDeploymentPostprocessing = 1;
+			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
@@ -28,6 +30,7 @@
 		D19B3810267E87A800944C57 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		D19B3817267E87C600944C57 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		D19B381C267E996D00944C57 /* Iris.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = Iris.csv; path = ../../../../../Downloads/archive/Iris.csv; sourceTree = "<group>"; };
+		D1A4B5662680B225004C531A /* Iris.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = Iris.csv; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,11 +63,20 @@
 		D19B380F267E87A800944C57 /* ReadLocalFiles */ = {
 			isa = PBXGroup;
 			children = (
+				D1A4B5652680B220004C531A /* Data */,
 				D19B3810267E87A800944C57 /* main.swift */,
 				D19B3817267E87C600944C57 /* File.swift */,
 				D19B381C267E996D00944C57 /* Iris.csv */,
 			);
 			path = ReadLocalFiles;
+			sourceTree = "<group>";
+		};
+		D1A4B5652680B220004C531A /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				D1A4B5662680B225004C531A /* Iris.csv */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
