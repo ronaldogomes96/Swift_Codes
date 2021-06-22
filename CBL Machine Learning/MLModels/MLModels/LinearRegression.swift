@@ -42,7 +42,7 @@ class LinearRegression {
         
                 // A cada interacao é calculado o erro, gradiente descedente e entao atualizado os pesos
                 let result = predict(data: xData)
-                let error = result - targets[position]
+                let error = targets[position] - result
                 let gradientVector = gradientDescentVector(xData: xData, erro: error)
                 
                 errors.append(error)
@@ -76,7 +76,7 @@ class LinearRegression {
     private func atualizeWeights(gradientVector: [Double]) {
         // Para cada posicao, atualiza o peso de acordo com a formula: w = w - ((n / m) * gradiente)
         for index in 0..<weights.count {
-            weights[index] -= ((rate / Double(gradientVector.count)) * gradientVector[index])
+            weights[index] += ((rate / Double(gradientVector.count)) * gradientVector[index])
         }
     }
     
