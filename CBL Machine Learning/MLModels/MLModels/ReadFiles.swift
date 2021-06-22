@@ -8,7 +8,7 @@
 import Foundation
 
 class ReadFiles {
-    static func read(fileName: String, type: String) -> [[Any]] {
+    static func read(fileName: String, type: String) -> [[String]] {
         guard let file = Bundle.main.path(forResource: fileName, ofType: type) else {
           fatalError("Resource could not be found!")
         }
@@ -19,9 +19,9 @@ class ReadFiles {
         
         let rows = content.split(separator: "\n").map { String($0) }
         
-        let data = rows.map { row -> [Any] in
-            let split = row.split(separator: ",")
-            return split as [Any]
+        let data = rows.map { row -> [String] in
+            let split = row.split(separator: ",").map { "\($0)"}
+            return split
         }
         
         return data
