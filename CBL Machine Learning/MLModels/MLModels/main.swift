@@ -27,6 +27,8 @@ let andTargets = [0, 0, 0 ,1]
 let x: [[Double]] = [[0, 1], [5, 1], [25, 5], [35, 11], [45, 15], [55, 34], [60, 35]]
 let y: [Double] = [4, 5, 14, 32, 22, 38, 43]
 
+let f = ReadFiles.read(fileName: "peixe", type: "txt")
+
 // [15, 2] 20
 
 
@@ -36,9 +38,9 @@ let y: [Double] = [4, 5, 14, 32, 22, 38, 43]
 //
 //print(perceptron.predict(data: [0, 0]))
 
-let regression = LinearRegression()
-let sta = Statistic()
-
-let newx = sta.normalize(data: x)
-regression.train(data: newx, targets: y)
-print(regression.predict(data: sta.normalize(data: [[5,1]])[0]))
+//let regression = LinearRegression()
+//let sta = Statistic()
+//
+//let newx = sta.normalize(data: x)
+//regression.train(data: newx, targets: y)
+//print(regression.predict(data: sta.normalize(data: [[5,1]])[0]))

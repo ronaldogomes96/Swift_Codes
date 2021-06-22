@@ -10,4 +10,4 @@ import Foundation
 let file = File()
 let csv = file.readCSV(fileName: "Iris")
 
-print(csv)
+print(csv[1][0..<csv[0].count - 1])

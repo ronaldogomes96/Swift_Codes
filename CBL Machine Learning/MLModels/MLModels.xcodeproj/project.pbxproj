@@ -10,6 +10,10 @@
 		D10A0C39267B73A600679E4B /* LinearRegression.swift in Sources */ = {isa = PBXBuildFile; fileRef = D10A0C38267B73A600679E4B /* LinearRegression.swift */; };
 		D19B381E267EAE4000944C57 /* KNN.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19B381D267EAE4000944C57 /* KNN.swift */; };
 		D1C12B77268209BF00F558B0 /* Statistic.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C12B76268209BF00F558B0 /* Statistic.swift */; };
+		D1C12B7926821DC000F558B0 /* ReadFiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C12B7826821DC000F558B0 /* ReadFiles.swift */; };
+		D1C12B7E26821E8C00F558B0 /* Iris.csv in CopyFiles */ = {isa = PBXBuildFile; fileRef = D1C12B7B26821E1900F558B0 /* Iris.csv */; };
+		D1C12B7F26821E8C00F558B0 /* peixe.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = D1C12B7C26821E2100F558B0 /* peixe.txt */; };
+		D1C12B8026821E8C00F558B0 /* pressão.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = D1C12B7D26821E2100F558B0 /* pressão.txt */; };
 		D1ECC312267ABB840016037B /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1ECC311267ABB840016037B /* main.swift */; };
 		D1ECC319267ABBCC0016037B /* Perceptron.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1ECC318267ABBCC0016037B /* Perceptron.swift */; };
 /* End PBXBuildFile section */
@@ -17,12 +21,15 @@
 /* Begin PBXCopyFilesBuildPhase section */
 		D1ECC30C267ABB840016037B /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = /usr/share/man/man1/;
-			dstSubfolderSpec = 0;
+			buildActionMask = 12;
+			dstPath = "";
+			dstSubfolderSpec = 7;
 			files = (
+				D1C12B7E26821E8C00F558B0 /* Iris.csv in CopyFiles */,
+				D1C12B7F26821E8C00F558B0 /* peixe.txt in CopyFiles */,
+				D1C12B8026821E8C00F558B0 /* pressão.txt in CopyFiles */,
 			);
-			runOnlyForDeploymentPostprocessing = 1;
+			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
@@ -30,6 +37,10 @@
 		D10A0C38267B73A600679E4B /* LinearRegression.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinearRegression.swift; sourceTree = "<group>"; };
 		D19B381D267EAE4000944C57 /* KNN.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KNN.swift; sourceTree = "<group>"; };
 		D1C12B76268209BF00F558B0 /* Statistic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Statistic.swift; sourceTree = "<group>"; };
+		D1C12B7826821DC000F558B0 /* ReadFiles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadFiles.swift; sourceTree = "<group>"; };
+		D1C12B7B26821E1900F558B0 /* Iris.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = Iris.csv; sourceTree = "<group>"; };
+		D1C12B7C26821E2100F558B0 /* peixe.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = peixe.txt; sourceTree = "<group>"; };
+		D1C12B7D26821E2100F558B0 /* pressão.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "pressão.txt"; sourceTree = "<group>"; };
 		D1ECC30E267ABB840016037B /* MLModels */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = MLModels; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1ECC311267ABB840016037B /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		D1ECC318267ABBCC0016037B /* Perceptron.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Perceptron.swift; sourceTree = "<group>"; };
@@ -46,6 +57,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D1C12B7A26821E0200F558B0 /* Files */ = {
+			isa = PBXGroup;
+			children = (
+				D1C12B7B26821E1900F558B0 /* Iris.csv */,
+				D1C12B7C26821E2100F558B0 /* peixe.txt */,
+				D1C12B7D26821E2100F558B0 /* pressão.txt */,
+			);
+			path = Files;
+			sourceTree = "<group>";
+		};
 		D1ECC305267ABB840016037B = {
 			isa = PBXGroup;
 			children = (
@@ -70,6 +91,8 @@
 				D10A0C38267B73A600679E4B /* LinearRegression.swift */,
 				D19B381D267EAE4000944C57 /* KNN.swift */,
 				D1C12B76268209BF00F558B0 /* Statistic.swift */,
+				D1C12B7826821DC000F558B0 /* ReadFiles.swift */,
+				D1C12B7A26821E0200F558B0 /* Files */,
 			);
 			path = MLModels;
 			sourceTree = "<group>";
@@ -134,6 +157,7 @@
 				D1ECC312267ABB840016037B /* main.swift in Sources */,
 				D1ECC319267ABBCC0016037B /* Perceptron.swift in Sources */,
 				D10A0C39267B73A600679E4B /* LinearRegression.swift in Sources */,
+				D1C12B7926821DC000F558B0 /* ReadFiles.swift in Sources */,
 				D1C12B77268209BF00F558B0 /* Statistic.swift in Sources */,
 				D19B381E267EAE4000944C57 /* KNN.swift in Sources */,
 			);
