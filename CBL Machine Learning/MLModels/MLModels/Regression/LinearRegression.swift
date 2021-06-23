@@ -49,7 +49,7 @@ class LinearRegression {
             weights.append(Double.random(in: -1...1))
         }
         
-        for epoch in 0...epochs {
+        for epoch in 0..<epochs {
             
             // Randomiza o dataset, juntamente com os valores de Y
             (xData, y) = randomizeDataset(x: xData, y: y)

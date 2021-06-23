@@ -67,4 +67,25 @@ struct RegressionData {
         let xTest = statistic.trasnform(data: [-10])
         print(regression.predict(data: xTest))
     }
+    
+    func runFish() {
+        var fish = ReadFiles.read(fileName: "peixe", type: "txt")
+        
+        fish.removeFirst()
+        
+        let x = fish.compactMap { [Double($0[0])!, Double($0[1])!] }
+        let y = fish.compactMap { Double($0.last!) }
+        print(x)
+        print(y)
+        
+        let regression = LinearRegression(epochs: 1000)
+        let statistic = Statistic()
+
+        let xScalar = statistic.normalize(data: x)
+        print(xScalar)
+        regression.train(data: xScalar, targets: y)
+
+        let xTest = statistic.trasnform(data: [83, 27]) // 83,27
+        print(regression.predict(data: xTest)) //4015
+    }
 }
