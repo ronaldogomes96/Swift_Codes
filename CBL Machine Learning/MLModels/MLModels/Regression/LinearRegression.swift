@@ -66,12 +66,12 @@ class LinearRegression {
                 atualizeWeights(gradientVector: gradientVector)
             }
             
-            print("Epoch \(epoch) weight \(weights) \n\n")
+            print("Epoch \(epoch + 1)")
             
             // Atualiza o array de custo
-            coast.append(calculateCoast(errors: errors))
+            coast.append(MSE(errors: errors))
             if epoch >= 1 {
-                print(coast)
+                print("Last two erros: \(coast[coast.count - 1]) - \(coast.last!) \n")
                 // Se o custo esta estabilizado, entao o treinamento termina
                 if abs((coast[epoch] - coast[epoch - 1])) < 0.00005 {
                     break
@@ -97,7 +97,7 @@ class LinearRegression {
         }
     }
     
-    private func calculateCoast(errors: [Double]) -> Double {
+    private func MSE(errors: [Double]) -> Double {
         var quadractureErros = 0.0
         for error in errors {
             quadractureErros += pow(error, 2.0)

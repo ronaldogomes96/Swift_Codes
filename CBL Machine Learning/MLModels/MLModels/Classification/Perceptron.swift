@@ -52,7 +52,7 @@ class Perceptron {
         for epoch in 0...epochs {
             hadErros = []
             
-            print("Epoch \(epoch) \nWeights \(weights)\n\n")
+            print("\n\nEpoch \(epoch + 1)")
             
             // Randomiza o dataset, juntamente com os valores de Y
             (xData, y) = randomizeDataset(x: xData, y: y)

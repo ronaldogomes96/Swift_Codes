@@ -11,6 +11,7 @@ struct ClassficationData {
     
     // MARK: - Perceptron
     func runAnd() {
+        // Dataset
         let and: [[Double]] = [[1, 0],
                                [0, 1],
                                [0, 0],
@@ -18,13 +19,16 @@ struct ClassficationData {
 
         let andTargets = [0, 0, 0 ,1]
         
+        // Train
         let perceptron = Perceptron()
         perceptron.train(data: and, targets: andTargets)
         
+        // Predict
         print(perceptron.predict(data: [0, 0])) //0
     }
     
     func runInternetDatabase() {
+        // Dataset
         let data = [ [0.3, 0.7],
                      [-0.6, 0.3],
                      [-0.1, -0.8],
@@ -32,9 +36,11 @@ struct ClassficationData {
 
         let targets = [1, 0, 0 ,1]
         
+        // Train
         let perceptron = Perceptron()
         perceptron.train(data: data, targets: targets)
         
+        // Predict
         print(perceptron.predict(data: [0.7, 0.9])) //1
     }
 }

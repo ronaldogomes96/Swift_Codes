@@ -10,4 +10,4 @@ import Foundation
 let classification = ClassficationData()
 let regression = RegressionData()
 
-regression.runFish()
+regression.runInternetDatabase()
