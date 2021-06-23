@@ -10,13 +10,21 @@ import Foundation
 class Statistic {
     func normalize(data: [[Double]]) -> [[Double]] {
         var xData = data
+        var xMin = Double.infinity
+        var xMax = 0.0
         
         for index in 0..<xData.count {
-            let xMin = xData[index].min()
-            let xMax = xData[index].max()
-            
+            if xData[index].min()! < xMin {
+                xMin = xData[index].min()!
+            }
+            if xData[index].max()! > xMax {
+                xMax = xData[index].max()!
+            }
+        }
+        
+        for index in 0..<xData.count {
             for (pos, x) in xData[index].enumerated() {
-                xData[index][pos] = (x - xMin!) / (xMax! - xMin!)
+                xData[index][pos] = (x - xMin) / (xMax - xMin)
             }
         }
         
