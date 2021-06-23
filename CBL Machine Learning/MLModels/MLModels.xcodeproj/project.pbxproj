@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		D10A0C39267B73A600679E4B /* LinearRegression.swift in Sources */ = {isa = PBXBuildFile; fileRef = D10A0C38267B73A600679E4B /* LinearRegression.swift */; };
+		D15103332682B6B0009AE92B /* ClassificationDatas.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15103322682B6B0009AE92B /* ClassificationDatas.swift */; };
+		D15103352682B84E009AE92B /* RegressionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15103342682B84E009AE92B /* RegressionData.swift */; };
 		D19B381E267EAE4000944C57 /* KNN.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19B381D267EAE4000944C57 /* KNN.swift */; };
 		D1C12B77268209BF00F558B0 /* Statistic.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C12B76268209BF00F558B0 /* Statistic.swift */; };
 		D1C12B7926821DC000F558B0 /* ReadFiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C12B7826821DC000F558B0 /* ReadFiles.swift */; };
@@ -35,6 +37,8 @@
 
 /* Begin PBXFileReference section */
 		D10A0C38267B73A600679E4B /* LinearRegression.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinearRegression.swift; sourceTree = "<group>"; };
+		D15103322682B6B0009AE92B /* ClassificationDatas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassificationDatas.swift; sourceTree = "<group>"; };
+		D15103342682B84E009AE92B /* RegressionData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegressionData.swift; sourceTree = "<group>"; };
 		D19B381D267EAE4000944C57 /* KNN.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KNN.swift; sourceTree = "<group>"; };
 		D1C12B76268209BF00F558B0 /* Statistic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Statistic.swift; sourceTree = "<group>"; };
 		D1C12B7826821DC000F558B0 /* ReadFiles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadFiles.swift; sourceTree = "<group>"; };
@@ -57,6 +61,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D151032F2682B52E009AE92B /* Classification */ = {
+			isa = PBXGroup;
+			children = (
+				D1ECC318267ABBCC0016037B /* Perceptron.swift */,
+				D19B381D267EAE4000944C57 /* KNN.swift */,
+			);
+			path = Classification;
+			sourceTree = "<group>";
+		};
+		D15103302682B53B009AE92B /* Regression */ = {
+			isa = PBXGroup;
+			children = (
+				D10A0C38267B73A600679E4B /* LinearRegression.swift */,
+			);
+			path = Regression;
+			sourceTree = "<group>";
+		};
+		D15103312682B547009AE92B /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				D1C12B76268209BF00F558B0 /* Statistic.swift */,
+				D1C12B7826821DC000F558B0 /* ReadFiles.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		D1C12B7A26821E0200F558B0 /* Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -87,11 +117,11 @@
 			isa = PBXGroup;
 			children = (
 				D1ECC311267ABB840016037B /* main.swift */,
-				D1ECC318267ABBCC0016037B /* Perceptron.swift */,
-				D10A0C38267B73A600679E4B /* LinearRegression.swift */,
-				D19B381D267EAE4000944C57 /* KNN.swift */,
-				D1C12B76268209BF00F558B0 /* Statistic.swift */,
-				D1C12B7826821DC000F558B0 /* ReadFiles.swift */,
+				D15103322682B6B0009AE92B /* ClassificationDatas.swift */,
+				D15103342682B84E009AE92B /* RegressionData.swift */,
+				D151032F2682B52E009AE92B /* Classification */,
+				D15103302682B53B009AE92B /* Regression */,
+				D15103312682B547009AE92B /* Utils */,
 				D1C12B7A26821E0200F558B0 /* Files */,
 			);
 			path = MLModels;
@@ -156,7 +186,9 @@
 			files = (
 				D1ECC312267ABB840016037B /* main.swift in Sources */,
 				D1ECC319267ABBCC0016037B /* Perceptron.swift in Sources */,
+				D15103352682B84E009AE92B /* RegressionData.swift in Sources */,
 				D10A0C39267B73A600679E4B /* LinearRegression.swift in Sources */,
+				D15103332682B6B0009AE92B /* ClassificationDatas.swift in Sources */,
 				D1C12B7926821DC000F558B0 /* ReadFiles.swift in Sources */,
 				D1C12B77268209BF00F558B0 /* Statistic.swift in Sources */,
 				D19B381E267EAE4000944C57 /* KNN.swift in Sources */,
