@@ -8,10 +8,13 @@
 import Foundation
 
 class Statistic {
+    private var mean: Double = 0.0
+    private var std: Double = 0.0
+    private var xMin = Double.infinity
+    private var xMax = 0.0
+    
     func normalize(data: [[Double]]) -> [[Double]] {
         var xData = data
-        var xMin = Double.infinity
-        var xMax = 0.0
         
         for index in 0..<xData.count {
             if xData[index].min()! < xMin {
@@ -31,20 +34,30 @@ class Statistic {
         return xData
     }
     
-    func standardize(data: [[Double]]) -> [[Double]] {
+    func trasnform(data: [Double]) -> [Double] {
         var xData = data
         
-        for index in 0..<xData.count {
-            let mean = mean(xData: xData[index])
-            let std = standardDeviation(xData: xData[index], mean: mean)
-            
-            for (pos, x) in xData[index].enumerated() {
-                xData[index][pos] = (x - mean) / std
-            }
+        for (pos, x) in xData.enumerated() {
+            xData[pos] = (x - xMin) / (xMax - xMin)
         }
         
         return xData
     }
+    
+//    func standardize(data: [[Double]]) -> [[Double]] {
+//        var xData = data
+//
+//        for index in 0..<xData.count {
+//            let mean = mean(xData: xData[index])
+//            let std = standardDeviation(xData: xData[index], mean: mean)
+//
+//            for (pos, x) in xData[index].enumerated() {
+//                xData[index][pos] = (x - mean) / std
+//            }
+//        }
+//
+//        return xData
+//    }
     
     func mean(xData: [Double]) -> Double {
         var sumOfX = 0.0

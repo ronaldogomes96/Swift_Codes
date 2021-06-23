@@ -23,8 +23,8 @@ struct RegressionData {
         print(xScalar)
         regression.train(data: xScalar, targets: y)
         
-        let xTest = statistic.normalize(data: [[15 ,2]])
-        print(regression.predict(data: xTest[0])) //20
+        let xTest = statistic.trasnform(data: [15 ,2])
+        print(regression.predict(data: xTest)) //20
     }
     
     func runPression() {
@@ -34,18 +34,37 @@ struct RegressionData {
         
         let xPressao = pressao.compactMap { [Double($0.first!)!] }
         let yPressao = pressao.compactMap { Double($0.last!) }
-//        print(xPressao)
-//        print(yPressao)
+        print(xPressao)
+        print(yPressao)
         
         let regression = LinearRegression()
         let statistic = Statistic()
-        
+
         let xScalar = statistic.normalize(data: xPressao)
-        //print(xScalar)
-        regression.train(data: xPressao, targets: yPressao)
+        print(xScalar)
+        regression.train(data: xScalar, targets: yPressao)
+
+        let xTest = statistic.trasnform(data: [42])
+        print(regression.predict(data: xTest)) //128
+    }
+    
+    func runFirstDegreeEquation() {
+        var fisrtDegree = ReadFiles.read(fileName: "EquacaoPrimeiroGrau", type: "csv")
         
-        let xTest = statistic.normalize(data: [[42]])
-        //print(regression.predict(data: xTest[0])) //128
-        print(regression.predict(data: [42]))
+        fisrtDegree.removeFirst()
+        
+        let x = fisrtDegree.compactMap { [Double($0.first!)!] }
+        let y = fisrtDegree.compactMap { Double($0.last!) }
+        print(x)
+        print(y)
+        
+        let regression = LinearRegression()
+        let statistic = Statistic()
+
+        let xScalar = statistic.normalize(data: x)
+        regression.train(data: xScalar, targets: y)
+
+        let xTest = statistic.trasnform(data: [-10])
+        print(regression.predict(data: xTest))
     }
 }
