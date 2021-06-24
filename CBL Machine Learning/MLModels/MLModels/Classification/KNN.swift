@@ -37,7 +37,7 @@ class KNN {
             updateKValues(for: newDistance, inPosition: dataLine)
         }
         
-        return mostFrequentTarget()
+        return mostFrequentTarget(y: targets, kIndexs: kIndexsClasses)
     }
     
     private func updateKValues(for newDistance: Double, inPosition index: Int) {
@@ -68,8 +68,8 @@ class KNN {
         }
     }
     
-    private func mostFrequentTarget() -> Double {
-        let y = kIndexsClasses.map { targets[$0] }
+    func mostFrequentTarget(y: [Double], kIndexs: [Int]) -> Double {
+        let y = kIndexs.map { y[$0] }
         let yMappedItems = y.map { ($0, 1) }
         let yDict = Dictionary(yMappedItems, uniquingKeysWith: +)
         let mostFrequenty = yDict.filter { $0.value == yDict.values.max() }

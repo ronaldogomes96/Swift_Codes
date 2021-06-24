@@ -10,7 +10,7 @@ import Foundation
 struct RegressionData {
     
     // MARK: - Linear Regression
-    func runInternetDatabase() {
+    func linearRegression_runInternetDatabase() {
         // Dataset
         let x: [[Double]] = [[0, 1],
                              [5, 1],
@@ -30,7 +30,7 @@ struct RegressionData {
         print(regression.predict(data: xTest)) //20
     }
     
-    func runPression() {
+    func linearRegression_runPression() {
         // Dataset
         var pressao = ReadFiles.read(fileName: "pressao", type: "txt")
         
@@ -52,7 +52,7 @@ struct RegressionData {
         print(regression.predict(data: xTest)) //128
     }
     
-    func runFirstDegreeEquation() {
+    func linearRegression_runFirstDegreeEquation() {
         // Dataset
         var fisrtDegree = ReadFiles.read(fileName: "EquacaoPrimeiroGrau", type: "csv")
         
@@ -74,7 +74,7 @@ struct RegressionData {
         print(regression.predict(data: xTest))
     }
     
-    func runFish() {
+    func linearRegression_runFish() {
         // Dataset
         var fish = ReadFiles.read(fileName: "peixe", type: "txt")
         
@@ -94,5 +94,48 @@ struct RegressionData {
 
         // Predict
         print(regression.predict(data: xTest)) //4015
+    }
+    
+    // MARK: - KNN Regression
+    func knn_runInternetDatabase() {
+        // Dataset
+        let x: [[Double]] = [[0, 1],
+                             [5, 1],
+                             [25, 5], [35, 11], [45, 15], [55, 34], [60, 35]]
+        let y: [Double] = [4, 5, 14, 32, 22, 38, 43]
+        
+        // Pre processing
+        let statistic = Statistic()
+        let xScalar = statistic.normalize(data: x)
+        let xTest = statistic.trasnformForNormalized(data: [15 ,2])
+        
+        // Train
+        let knn = KNNRegression(KNeighbors: 3)
+        knn.train(data: xScalar, targets: y)
+        
+        // Predict
+        print(knn.predict(x: xTest)) //20
+    }
+    
+    func knn_runPression() {
+        // Dataset
+        var pressao = ReadFiles.read(fileName: "pressao", type: "txt")
+        
+        // Data clean
+        pressao.removeFirst()
+        let x = pressao.compactMap { [Double($0.first!)!] }
+        let y = pressao.compactMap { Double($0.last!) }
+        
+        // Pre processing
+        let statistic = Statistic()
+        let xScalar = statistic.normalize(data: x)
+        let xTest = statistic.trasnformForNormalized(data: [42])
+
+        // Train
+        let knn = KNNRegression(KNeighbors: 3)
+        knn.train(data: xScalar, targets: y)
+
+        // Predict
+        print(knn.predict(x: xTest)) //128
     }
 }

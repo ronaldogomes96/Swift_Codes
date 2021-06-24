@@ -10,4 +10,4 @@ import Foundation
 let classification = ClassficationData()
 let regression = RegressionData()
 
-classification.knn_runInternetDatabase()
+regression.knn_runPression()
