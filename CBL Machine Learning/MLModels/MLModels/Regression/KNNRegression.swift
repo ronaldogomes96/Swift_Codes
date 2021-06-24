@@ -8,6 +8,7 @@
 import Foundation
 
 class KNNRegression: KNN {
+    // A unica diferenca da KNN de regressao é que nesta funcao é calculada a media dos K vizinhos
     override func mostFrequentTarget(y: [Double], kIndexs: [Int]) -> Double {
         let yFrequency = kIndexs.map { y[$0] }
         let statistic = Statistic()
