@@ -24,9 +24,9 @@ class KNN {
     }
     
     func predict(x: [Double]) -> Double {
-        for dataLine in 0...data.count {
+        for dataLine in 0..<data.count {
             var sum = 0.0
-            for dataColumn in 0...x.count {
+            for dataColumn in 0..<x.count {
                 sum += pow(x[dataColumn] - data[dataLine][dataColumn], 2.0)
             }
             

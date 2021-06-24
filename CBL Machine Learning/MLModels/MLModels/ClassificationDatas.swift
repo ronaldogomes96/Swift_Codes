@@ -10,7 +10,7 @@ import Foundation
 struct ClassficationData {
     
     // MARK: - Perceptron
-    func runAnd() {
+    func perceptron_runAnd() {
         // Dataset
         let and: [[Double]] = [[1, 0],
                                [0, 1],
@@ -27,7 +27,7 @@ struct ClassficationData {
         print(perceptron.predict(data: [0, 0])) //0
     }
     
-    func runInternetDatabase() {
+    func perceptron_runInternetDatabase() {
         // Dataset
         let data = [ [0.3, 0.7],
                      [-0.6, 0.3],
@@ -42,5 +42,23 @@ struct ClassficationData {
         
         // Predict
         print(perceptron.predict(data: [0.7, 0.9])) //1
+    }
+    
+    // MARK: - KNN
+    func knn_runInternetDatabase() {
+        // Dataset
+        let data = [ [0.3, 0.7],
+                     [-0.6, 0.3],
+                     [-0.1, -0.8],
+                     [0.1, -0.45] ]
+
+        let targets: [Double] = [1, 0, 0 ,1]
+        
+        // Train
+        let knn = KNN(KNeighbors: 1)
+        knn.train(data: data, targets: targets)
+        
+        // Predict
+        print(knn.predict(x: [0.7, 0.9])) //1
     }
 }
