@@ -61,4 +61,39 @@ struct ClassficationData {
         // Predict
         print(knn.predict(x: [0.7, 0.9])) //1
     }
+    
+    // MARK: - DMC
+    func dmc_runAnd() {
+        // Dataset
+        let and: [[Double]] = [[1, 0],
+                               [0, 1],
+                               [0, 0],
+                               [1, 1]]
+
+        let andTargets: [Double] = [0, 0, 0 ,1]
+        
+        // Train
+        let dmc = DMC()
+        dmc.train(data: and, targets: andTargets)
+        
+        // Predict
+        print(dmc.predict(data: [0, 0])) //0
+    }
+    
+    func dmc_runInternetDatabase() {
+        // Dataset
+        let data = [ [0.3, 0.7],
+                     [-0.6, 0.3],
+                     [-0.1, -0.8],
+                     [0.1, -0.45] ]
+
+        let targets: [Double] = [1, 0, 0 ,1]
+        
+        // Train
+        let dmc = DMC()
+        dmc.train(data: data, targets: targets)
+        
+        // Predict
+        print(dmc.predict(data: [0.7, 0.9])) //1
+    }
 }

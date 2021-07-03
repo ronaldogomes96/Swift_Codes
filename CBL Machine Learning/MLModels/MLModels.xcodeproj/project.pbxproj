@@ -19,6 +19,7 @@
 		D1C12B7F26821E8C00F558B0 /* peixe.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = D1C12B7C26821E2100F558B0 /* peixe.txt */; };
 		D1C12B8026821E8C00F558B0 /* pressao.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = D1C12B7D26821E2100F558B0 /* pressao.txt */; };
 		D1CC8B182684BBB200587F92 /* KNNRegression.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1CC8B172684BBB200587F92 /* KNNRegression.swift */; };
+		D1E009FF26900CFD0029E580 /* DMC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E009FE26900CFD0029E580 /* DMC.swift */; };
 		D1ECC312267ABB840016037B /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1ECC311267ABB840016037B /* main.swift */; };
 		D1ECC319267ABBCC0016037B /* Perceptron.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1ECC318267ABBCC0016037B /* Perceptron.swift */; };
 		D1F2DF4A2683630F003AF94E /* EquacaoPrimeiroGrau.csv in CopyFiles */ = {isa = PBXBuildFile; fileRef = D1F2DF492683613B003AF94E /* EquacaoPrimeiroGrau.csv */; };
@@ -55,6 +56,7 @@
 		D1C12B7C26821E2100F558B0 /* peixe.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = peixe.txt; sourceTree = "<group>"; };
 		D1C12B7D26821E2100F558B0 /* pressao.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = pressao.txt; sourceTree = "<group>"; };
 		D1CC8B172684BBB200587F92 /* KNNRegression.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KNNRegression.swift; sourceTree = "<group>"; };
+		D1E009FE26900CFD0029E580 /* DMC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMC.swift; sourceTree = "<group>"; };
 		D1ECC30E267ABB840016037B /* MLModels */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = MLModels; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1ECC311267ABB840016037B /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		D1ECC318267ABBCC0016037B /* Perceptron.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Perceptron.swift; sourceTree = "<group>"; };
@@ -77,6 +79,7 @@
 			children = (
 				D1ECC318267ABBCC0016037B /* Perceptron.swift */,
 				D19B381D267EAE4000944C57 /* KNN.swift */,
+				D1E009FE26900CFD0029E580 /* DMC.swift */,
 			);
 			path = Classification;
 			sourceTree = "<group>";
@@ -203,6 +206,7 @@
 				D1CC8B182684BBB200587F92 /* KNNRegression.swift in Sources */,
 				D1ECC319267ABBCC0016037B /* Perceptron.swift in Sources */,
 				D15103352682B84E009AE92B /* RegressionData.swift in Sources */,
+				D1E009FF26900CFD0029E580 /* DMC.swift in Sources */,
 				D10A0C39267B73A600679E4B /* LinearRegression.swift in Sources */,
 				D15103332682B6B0009AE92B /* ClassificationDatas.swift in Sources */,
 				D1C12B7926821DC000F558B0 /* ReadFiles.swift in Sources */,
